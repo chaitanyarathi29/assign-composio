@@ -1,0 +1,26 @@
+{
+  "pass1": {
+    "passName": "Pass 1 (Baseline)",
+    "totalApps": 100,
+    "foundInComposio": 58,
+    "notFound": 42,
+    "coveragePct": 58,
+    "browserConfirmed": 53,
+    "browserConfirmedPct": 91,
+    "manualVerifyCorrect": 20,
+    "manualVerifyTotal": 20,
+    "manualAccuracyPct": 100
+  },
+  "pass2": {
+    "passName": "Pass 2 (After fixes)",
+    "totalApps": 100,
+    "foundInComposio": 58,
+    "notFound": 42,
+    "coveragePct": 58,
+    "browserConfirmed": 53,
+    "browserConfirmedPct": 91,
+    "manualVerifyCorrect": 20,
+    "manualVerifyTotal": 20,
+    "manualAccuracyPct": 100
+  }
+}

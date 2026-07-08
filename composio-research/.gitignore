@@ -4,9 +4,6 @@ node_modules/
 # Environment
 .env
 
-# Output
-output/
-
 # Misc
 .DS_Store
 dist/

@@ -1,0 +1,2520 @@
+[
+  {
+    "id": 1,
+    "appName": "Salesforce",
+    "oneLiner": "Industry-leading CRM for sales, service, and marketing automation.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free Developer Edition available at developer.salesforce.com",
+    "apiSurface": "REST+GraphQL+SOAP",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Salesforce MCP server (2025)",
+    "docsUrl": "https://developer.salesforce.com/docs/apis",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "salesforce",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 184,
+    "composioTriggerCount": 7,
+    "composioDescription": "Salesforce is a leading CRM platform integrating sales, service, marketing, and analytics to build customer relationships and drive business growth",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 184 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 2,
+    "appName": "HubSpot",
+    "oneLiner": "CRM platform covering marketing, sales, and customer service.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free CRM account + developer sandbox at developers.hubspot.com",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official HubSpot MCP server announced 2025",
+    "docsUrl": "https://developers.hubspot.com/docs/api/overview",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "hubspot",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 244,
+    "composioTriggerCount": 2,
+    "composioDescription": "HubSpot is an inbound marketing, sales, and customer service platform integrating CRM, email automation, and analytics to facilitate lead nurturing and seamless customer experiences",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 244 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 3,
+    "appName": "Pipedrive",
+    "oneLiner": "Sales-focused CRM built around pipeline visualization.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day free trial, API key in settings, dev OAuth via Marketplace",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.pipedrive.com/docs/api/v1",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "pipedrive",
+    "composioAuthSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "composioToolCount": 399,
+    "composioTriggerCount": 3,
+    "composioDescription": "Pipedrive is a sales management tool built around pipeline visualization, lead tracking, activity reminders, and automation to keep deals progressing",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 399 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 4,
+    "appName": "Attio",
+    "oneLiner": "Modern data-driven CRM with flexible objects and workflows.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan available; API token in workspace settings",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Official Attio MCP server available",
+    "docsUrl": "https://docs.attio.com/docs/overview",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "attio",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 99,
+    "composioTriggerCount": 0,
+    "composioDescription": "Attio is a fully customizable workspace for your team's relationships and workflows.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 99 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 5,
+    "appName": "Twenty",
+    "oneLiner": "Open-source CRM, self-hostable alternative to Salesforce.",
+    "authMethods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "MIT-licensed OSS; free cloud or self-host; API key in settings",
+    "apiSurface": "REST+GraphQL",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Community MCP server exists on GitHub",
+    "docsUrl": "https://developers.twenty.com",
+    "buildabilityBlocker": "Not yet in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not yet in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 6,
+    "appName": "Podio",
+    "oneLiner": "Flexible work-management and CRM platform by Citrix.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free tier available; developer app registration at podio.com/developers",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.podio.com",
+    "buildabilityBlocker": "Not in Composio; needs new toolkit",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; needs new toolkit",
+    "buildable": false
+  },
+  {
+    "id": 7,
+    "appName": "Zoho CRM",
+    "oneLiner": "Full-featured CRM from Zoho's broad business-software suite.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free tier for up to 3 users; OAuth via Zoho API Console",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Zoho published official MCP server 2025",
+    "docsUrl": "https://www.zoho.com/crm/developer/docs/api/v6/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "zoho",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 57,
+    "composioTriggerCount": 0,
+    "composioDescription": "Zoho is a suite of cloud applications including CRM, email marketing, and collaboration tools, enabling businesses to automate and scale operations",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 57 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 8,
+    "appName": "Close",
+    "oneLiner": "Sales CRM focused on outbound calling and pipeline for SMBs.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day free trial; API key in Settings > API Keys",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.close.com",
+    "buildabilityBlocker": "Only 6 tools in Composio — limited surface",
+    "foundInComposio": true,
+    "composioSlug": "close",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 6,
+    "composioTriggerCount": 0,
+    "composioDescription": "Close is a CRM platform designed to help businesses manage and streamline their sales processes, including calling, email automation, and predictive dialers.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 6 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 9,
+    "appName": "Copper",
+    "oneLiner": "CRM deeply integrated with Google Workspace for Gmail-native workflows.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day free trial; API key in account settings",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.copper.com",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 10,
+    "appName": "DealCloud",
+    "oneLiner": "Enterprise deal-management and CRM platform for financial services firms.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "No",
+    "selfServeNote": "Enterprise sales-gated; no free tier or public dev sandbox",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Intapp MCP server announced 2025 for DealCloud data",
+    "docsUrl": "https://api.docs.dealcloud.com",
+    "buildabilityBlocker": "Enterprise-gated access; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Enterprise-gated access; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 11,
+    "appName": "Zendesk",
+    "oneLiner": "Market-leading customer support and ticketing platform.",
+    "authMethods": [
+      "OAuth2",
+      "API Key",
+      "Basic Auth"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial available; API token in Admin > API settings",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Zendesk MCP server available",
+    "docsUrl": "https://developer.zendesk.com/api-reference/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "zendesk",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 452,
+    "composioTriggerCount": 2,
+    "composioDescription": "Zendesk provides customer support software with ticketing, live chat, and knowledge base features, enabling efficient helpdesk operations and customer engagement",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 452 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 12,
+    "appName": "Intercom",
+    "oneLiner": "Customer messaging platform for support, sales, and onboarding.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day free trial; access tokens in Developer Hub",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Intercom MCP server published 2025",
+    "docsUrl": "https://developers.intercom.com/docs",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "intercom",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 133,
+    "composioTriggerCount": 0,
+    "composioDescription": "Intercom provides live chat, messaging, and customer engagement tools, enabling businesses to drive conversions, handle support, and personalize communication at scale",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 133 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 13,
+    "appName": "Freshdesk",
+    "oneLiner": "Cloud-based helpdesk with ticketing, automation, and self-service portals.",
+    "authMethods": [
+      "API Key",
+      "Basic Auth"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free Sprout plan available; API key in Profile settings",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.freshdesk.com/api/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "freshdesk",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 178,
+    "composioTriggerCount": 0,
+    "composioDescription": "Freshdesk provides customer support software with ticketing, knowledge base, and automation features for efficient helpdesk operations and better customer experiences",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 178 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 14,
+    "appName": "Front",
+    "oneLiner": "Collaborative inbox and customer communication platform for teams.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial available; API token in Settings > API & Webhooks",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://dev.frontapp.com/docs",
+    "buildabilityBlocker": "0 tools exposed in Composio despite toolkit existing",
+    "foundInComposio": true,
+    "composioSlug": "front",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 0,
+    "composioTriggerCount": 0,
+    "composioDescription": "Front is a shared inbox and collaboration platform that centralizes customer communications from multiple channels, enabling teams to manage emails, chats, and more",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Toolkit exists but 0 tools exposed",
+    "buildable": false
+  },
+  {
+    "id": 15,
+    "appName": "Pylon",
+    "oneLiner": "B2B customer support platform focused on Slack-native support.",
+    "authMethods": [
+      "Bearer Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "API tokens available to admins in Pylon settings",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://docs.usepylon.com/pylon-docs/developer",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 16,
+    "appName": "LiveAgent",
+    "oneLiner": "All-in-one help desk with live chat, ticketing, and call center.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "30-day free trial; API key in Configuration > API",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://www.ladesk.com/features/api/",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 17,
+    "appName": "Plain",
+    "oneLiner": "Developer-first customer support platform with GraphQL API.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free tier available; API key in Settings > API keys",
+    "apiSurface": "GraphQL",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://www.plain.com/docs",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "plain",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 22,
+    "composioTriggerCount": 0,
+    "composioDescription": "Plain is a collaborative support platform for B2B support teams, offering a modern, AI-powered interface to consolidate support channels and assist customers efficiently.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 22 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 18,
+    "appName": "Help Scout",
+    "oneLiner": "Customer support platform with shared inbox and knowledge base.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial; OAuth app registration at developer.helpscout.com",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.helpscout.com/docs-api/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "help_scout",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 129,
+    "composioTriggerCount": 0,
+    "composioDescription": "Help Scout provides customer support software with shared inbox, knowledge base, and customer management tools",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 129 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 19,
+    "appName": "Gorgias",
+    "oneLiner": "E-commerce helpdesk deeply integrated with Shopify, WooCommerce.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Trial available; API access via Settings > REST API",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.gorgias.com",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "gorgias",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 32,
+    "composioTriggerCount": 0,
+    "composioDescription": "Gorgias is a helpdesk and live chat platform specializing in e-commerce, offering automated support, order management, and unified customer communication",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 32 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 20,
+    "appName": "Gladly",
+    "oneLiner": "People-centered enterprise customer service platform.",
+    "authMethods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "selfServe": "No",
+    "selfServeNote": "Enterprise-only; no public self-serve trial or free tier",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.gladly.com",
+    "buildabilityBlocker": "Enterprise sales-gated; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Enterprise sales-gated; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 21,
+    "appName": "Slack",
+    "oneLiner": "Team messaging and collaboration hub with deep app ecosystem.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free workspace; create Slack app at api.slack.com for OAuth",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://api.slack.com/docs",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "slack",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 158,
+    "composioTriggerCount": 9,
+    "composioDescription": "Slack is a channel-based messaging platform. With Slack, people can work together more effectively, connect all their software tools and services, and find the information they need to do their best work - all within a secure, enterprise-grade environment.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 158 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 22,
+    "appName": "Twilio",
+    "oneLiner": "Cloud communications platform for SMS, voice, video, and email.",
+    "authMethods": [
+      "API Key",
+      "Basic Auth"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial with $15 credit; Account SID + Auth Token from console",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Twilio MCP server published 2025",
+    "docsUrl": "https://www.twilio.com/docs/usage/api",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 23,
+    "appName": "Zoho Cliq",
+    "oneLiner": "Team messaging and video conferencing tool within Zoho ecosystem.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free tier available; OAuth via Zoho API Console",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://cliq.zoho.com/developer/platform",
+    "buildabilityBlocker": "Not in Composio; Zoho toolkit covers Zoho CRM only",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; Zoho toolkit covers Zoho CRM only",
+    "buildable": false
+  },
+  {
+    "id": 24,
+    "appName": "Lark (Larksuite)",
+    "oneLiner": "All-in-one enterprise collaboration suite (messaging, docs, calendar) by ByteDance.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; developer access at open.larksuite.com",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Lark/Feishu MCP server available on GitHub",
+    "docsUrl": "https://open.larksuite.com/document/home/index",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 25,
+    "appName": "Pumble",
+    "oneLiner": "Free team communication app — Slack alternative for cost-conscious teams.",
+    "authMethods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; API access via workspace settings",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://api.pumble.com",
+    "buildabilityBlocker": "Not in Composio; limited public API surface",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; limited public API surface",
+    "buildable": false
+  },
+  {
+    "id": 26,
+    "appName": "Discord",
+    "oneLiner": "Voice, video, and text community platform originally for gaming.",
+    "authMethods": [
+      "OAuth2",
+      "Bot Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free; create app at discord.com/developers/applications",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://discord.com/developers/docs/intro",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "discord",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 27,
+    "composioTriggerCount": 1,
+    "composioDescription": "An instant messaging and VoIP social platform.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 27 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 27,
+    "appName": "Telegram",
+    "oneLiner": "Encrypted messaging app with powerful bot and channel APIs.",
+    "authMethods": [
+      "Bot Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free; create bot via @BotFather to get token instantly",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://core.telegram.org/bots/api",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "telegram",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 18,
+    "composioTriggerCount": 0,
+    "composioDescription": "Telegram is a cloud-based messaging app with a focus on security and speed. Build bots to send messages, manage chats, and interact with users.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 18 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 28,
+    "appName": "WhatsApp Business",
+    "oneLiner": "Meta's business messaging API for customer communication at scale.",
+    "authMethods": [
+      "OAuth2",
+      "Bearer Token"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "Cloud API free to test via Meta developers; send limits until verified",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "whatsapp",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 57,
+    "composioTriggerCount": 1,
+    "composioDescription": "Enables interaction with customers through the WhatsApp Business API for messaging and automation. Only supports WhatsApp Business accounts, not WhatsApp Personal accounts.",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 57 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 29,
+    "appName": "Aircall",
+    "oneLiner": "Cloud-based business phone system and call center software.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "7-day free trial; API credentials in Aircall Dashboard",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.aircall.io/api-references/",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 30,
+    "appName": "Vonage",
+    "oneLiner": "Communications APIs for SMS, voice, video, and verification (now Ericsson).",
+    "authMethods": [
+      "API Key",
+      "JWT"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial with €2 credit; API key from developer dashboard",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.vonage.com/en/documentation",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 31,
+    "appName": "Google Ads",
+    "oneLiner": "Google's advertising platform for search, display, and video ads.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "OAuth free; API access needs developer token approval (standard access gated)",
+    "apiSurface": "REST+gRPC",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.google.com/google-ads/api/docs/start",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "googleads",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 22,
+    "composioTriggerCount": 0,
+    "composioDescription": "Google Ads, is an online advertising platform developed by Google, where advertisers bid to display brief advertisements, service offerings, product listings, and videos to web users.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 22 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 32,
+    "appName": "Meta Ads",
+    "oneLiner": "Facebook/Instagram ad management and analytics APIs.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free; create Meta app at developers.facebook.com for access token",
+    "apiSurface": "REST+GraphQL",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.facebook.com/docs/marketing-apis",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "metaads",
+    "composioAuthSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "composioToolCount": 50,
+    "composioTriggerCount": 0,
+    "composioDescription": "Create, edit and get insights from ads across Meta technologies, including Facebook, Instagram, Messenger, WhatsApp and more.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 50 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 33,
+    "appName": "LinkedIn Ads",
+    "oneLiner": "LinkedIn's marketing and advertising API for B2B campaigns.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "OAuth free; Marketing Developer Platform requires application review",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "linkedin",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 22,
+    "composioTriggerCount": 0,
+    "composioDescription": "LinkedIn is a professional networking platform enabling job seekers, companies, and thought leaders to connect, share content, and discover business opportunities",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 22 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 34,
+    "appName": "GoHighLevel",
+    "oneLiner": "All-in-one marketing and CRM platform for agencies.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day free trial; API key in Settings > API Keys",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://highlevel.stoplight.io/docs/integrations",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "highlevel",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 218,
+    "composioTriggerCount": 0,
+    "composioDescription": "HighLevel provides a marketing automation and CRM platform for agencies, featuring funnels, appointment scheduling, two-way texting, and other tools to drive client success",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 218 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 35,
+    "appName": "Mailchimp",
+    "oneLiner": "Email marketing platform with automation, landing pages, and analytics.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan for up to 500 contacts; API key in Account > Extras",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://mailchimp.com/developer/marketing/api/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "mailchimp",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 272,
+    "composioTriggerCount": 4,
+    "composioDescription": "Mailchimp is an email marketing and automation platform providing campaign templates, audience segmentation, and performance analytics to drive engagement and conversions",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 272 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 36,
+    "appName": "Klaviyo",
+    "oneLiner": "Email and SMS marketing automation platform focused on e-commerce.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan up to 250 contacts; API key in Account > Settings > API Keys",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.klaviyo.com/en",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "klaviyo",
+    "composioAuthSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "composioToolCount": 225,
+    "composioTriggerCount": 0,
+    "composioDescription": "Klaviyo is a data-driven email and SMS marketing platform that allows e-commerce brands to deliver targeted messages, track conversions, and scale customer relationships",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 225 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 37,
+    "appName": "systeme.io",
+    "oneLiner": "All-in-one funnel builder, email marketing, and online course platform.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan available; API key in Profile > API",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.systeme.io",
+    "buildabilityBlocker": "Not in Composio; very limited API surface",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; very limited API surface",
+    "buildable": false
+  },
+  {
+    "id": 38,
+    "appName": "Pinterest",
+    "oneLiner": "Visual discovery and social media platform with ad and content APIs.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Register app at developers.pinterest.com; standard access free",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.pinterest.com/docs/getting-started/introduction/",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 39,
+    "appName": "Threads (Meta)",
+    "oneLiner": "Meta's text-based social platform (Twitter/X alternative).",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Threads API public since mid-2024; app at developers.facebook.com",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.facebook.com/docs/threads",
+    "buildabilityBlocker": "Not in Composio; API still limited (post, reply, insights only)",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; API still limited (post, reply, insights only)",
+    "buildable": false
+  },
+  {
+    "id": 40,
+    "appName": "SendGrid",
+    "oneLiner": "Transactional and marketing email delivery service by Twilio.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan with 100 emails/day; API key from Settings > API Keys",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://docs.sendgrid.com/api-reference/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "sendgrid",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 359,
+    "composioTriggerCount": 0,
+    "composioDescription": "SendGrid is a cloud-based email delivery platform providing transactional and marketing email services, with APIs for integration, analytics, and scalability",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 359 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 41,
+    "appName": "Shopify",
+    "oneLiner": "Leading e-commerce platform for building and managing online stores.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free dev store via Partners program; public or custom app credentials",
+    "apiSurface": "REST+GraphQL",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Shopify MCP server available via Shopify Dev",
+    "docsUrl": "https://shopify.dev/docs/api",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "shopify",
+    "composioAuthSchemes": [
+      "OAUTH2",
+      "API_KEY",
+      "S2S_OAUTH2"
+    ],
+    "composioToolCount": 315,
+    "composioTriggerCount": 0,
+    "composioDescription": "Shopify is an e-commerce platform. This toolkit is GraphQL-first for new Admin API automations while retaining legacy REST compatibility actions for older workflows and numeric-ID interoperability",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 315 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 42,
+    "appName": "WooCommerce",
+    "oneLiner": "Open-source WordPress e-commerce plugin powering millions of stores.",
+    "authMethods": [
+      "API Key",
+      "OAuth1"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plugin; API keys generated in WooCommerce > Settings > Advanced > REST API",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+    "buildabilityBlocker": "Not in Composio; self-hosted so instance URL required per store",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; self-hosted so instance URL required per store",
+    "buildable": false
+  },
+  {
+    "id": 43,
+    "appName": "BigCommerce",
+    "oneLiner": "SaaS e-commerce platform for mid-market and enterprise merchants.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial + sandbox; API credentials in Advanced Settings > API Accounts",
+    "apiSurface": "REST+GraphQL",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.bigcommerce.com/docs/rest-management",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 44,
+    "appName": "Salesforce Commerce Cloud",
+    "oneLiner": "Enterprise e-commerce platform (formerly Demandware) by Salesforce.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "No",
+    "selfServeNote": "Enterprise contracts required; sandbox needs Salesforce partnership",
+    "apiSurface": "REST+GraphQL",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.salesforce.com/docs/commerce/commerce-api",
+    "buildabilityBlocker": "Enterprise/partner-gated; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Enterprise/partner-gated; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 45,
+    "appName": "Magento (Adobe Commerce)",
+    "oneLiner": "Open-source and enterprise e-commerce platform by Adobe.",
+    "authMethods": [
+      "OAuth2",
+      "API Key",
+      "Bearer Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Magento Open Source free; Adobe Commerce enterprise requires license",
+    "apiSurface": "REST+GraphQL+SOAP",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.adobe.com/commerce/webapi/",
+    "buildabilityBlocker": "Not in Composio; self-hosted so instance-specific",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; self-hosted so instance-specific",
+    "buildable": false
+  },
+  {
+    "id": 46,
+    "appName": "Squarespace",
+    "oneLiner": "Website builder and e-commerce platform for creatives.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day trial; developer platform at developers.squarespace.com",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.squarespace.com/commerce-apis/introduction",
+    "buildabilityBlocker": "Not in Composio; limited API surface (orders/inventory focus)",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; limited API surface (orders/inventory focus)",
+    "buildable": false
+  },
+  {
+    "id": 47,
+    "appName": "Ecwid",
+    "oneLiner": "Embeddable e-commerce store widget and platform by Lightspeed.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan available; API access at my.ecwid.com/apps",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://api-docs.ecwid.com",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 48,
+    "appName": "Gumroad",
+    "oneLiner": "Simple platform for creators to sell digital products directly.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free account; OAuth app registration at gumroad.com/api",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://app.gumroad.com/api",
+    "buildabilityBlocker": "Only 7 tools; narrow surface",
+    "foundInComposio": true,
+    "composioSlug": "gumroad",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 7,
+    "composioTriggerCount": 0,
+    "composioDescription": "Gumroad simplifies selling digital goods, physical products, and memberships by offering a streamlined checkout, marketing tools, and direct payout options",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 7 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 49,
+    "appName": "Amazon Selling Partner",
+    "oneLiner": "Amazon's API for third-party sellers to manage listings, orders, and inventory.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "Free to register as developer; listing on Marketplace or self-authorization needed",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer-docs.amazon.com/sp-api/docs",
+    "buildabilityBlocker": "0 tools exposed in Composio despite toolkit existing",
+    "foundInComposio": true,
+    "composioSlug": "amazon",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 0,
+    "composioTriggerCount": 0,
+    "composioDescription": "Amazon is an e-commerce giant delivering a massive online marketplace, cloud services, and digital products that connect retailers, consumers, and businesses worldwide for seamless transactions",
+    "matchMethod": "alias",
+    "finalVerdict": "Toolkit exists but 0 tools exposed",
+    "buildable": false
+  },
+  {
+    "id": 50,
+    "appName": "fanbasis",
+    "oneLiner": "Fan engagement and monetization platform for sports and entertainment.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "No",
+    "selfServeNote": "No public developer docs; contact-sales required",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://fanbasis.com",
+    "buildabilityBlocker": "No public API docs; partner-gated; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: No public API docs; partner-gated; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 51,
+    "appName": "DataForSEO",
+    "oneLiner": "SEO data APIs for SERP, keyword, backlink, and content analysis.",
+    "authMethods": [
+      "Basic Auth"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Pay-as-you-go; register at dataforseo.com, get credentials instantly",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official DataForSEO MCP server available",
+    "docsUrl": "https://docs.dataforseo.com",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "dataforseo",
+    "composioAuthSchemes": [
+      "BASIC"
+    ],
+    "composioToolCount": 312,
+    "composioTriggerCount": 0,
+    "composioDescription": "SEO data and analytics platform providing SERP data, backlinks, keywords, and competitive intelligence",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 312 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 52,
+    "appName": "SE Ranking",
+    "oneLiner": "All-in-one SEO platform with rank tracking, site audit, and backlinks.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day free trial; API token in Account Settings",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://seranking.com/api.html",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 53,
+    "appName": "Ahrefs",
+    "oneLiner": "SEO toolset for backlink analysis, keyword research, and site audits.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "API access requires paid Ahrefs subscription (starts $99/mo)",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Community MCP server available for Ahrefs",
+    "docsUrl": "https://docs.ahrefs.com/docs/api/v3",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "ahrefs",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 40,
+    "composioTriggerCount": 0,
+    "composioDescription": "Ahrefs is an SEO and marketing platform offering site audits, keyword research, content analysis, and competitive insights to improve search rankings and drive organic traffic",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 40 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 54,
+    "appName": "MrScraper",
+    "oneLiner": "AI-powered web scraping tool with natural language selectors.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan available; API key from dashboard",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://docs.mrscraper.com",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 55,
+    "appName": "Apify",
+    "oneLiner": "Web scraping and automation platform with 1,500+ pre-built actors.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free $5/month credits; API token in Settings > Integrations",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Apify MCP server (apify-mcp) in Composio registry",
+    "docsUrl": "https://docs.apify.com/api/v2",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "apify",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 112,
+    "composioTriggerCount": 0,
+    "composioDescription": "Apify is a platform for building, deploying, and managing web scraping and automation tools, known as Actors.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 112 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 56,
+    "appName": "Firecrawl",
+    "oneLiner": "Developer-first web scraping and crawling API with markdown output.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free 500 credits/month; API key from firecrawl.dev dashboard",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": true,
+    "mcpNote": "Official Firecrawl MCP server available",
+    "docsUrl": "https://docs.firecrawl.dev",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "firecrawl",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 29,
+    "composioTriggerCount": 0,
+    "composioDescription": "Firecrawl automates web crawling and data extraction, enabling organizations to gather content, index sites, and gain insights from online sources at scale",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 29 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 57,
+    "appName": "Bright Data",
+    "oneLiner": "Enterprise proxy network and web data collection infrastructure.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial with credit; API token from Bright Data console",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": true,
+    "mcpNote": "Official Bright Data MCP server available",
+    "docsUrl": "https://docs.brightdata.com",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "brightdata",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 10,
+    "composioTriggerCount": 0,
+    "composioDescription": "Bright Data provides the world's #1 web data platform with Web Unlocker for bypassing anti-bot systems, SERP API for search engine data, and pre-made scrapers for popular websites. Collect any web data at scale.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 10 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 58,
+    "appName": "Sherlock",
+    "oneLiner": "Open-source CLI tool to find social media accounts by username.",
+    "authMethods": [
+      "None"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "MIT-licensed OSS CLI; no API — runs locally via Python",
+    "apiSurface": "No public API",
+    "apiBreath": "None",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://github.com/sherlock-project/sherlock",
+    "buildabilityBlocker": "CLI tool, no REST API; would need wrapper to build agent toolkit",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: CLI tool, no REST API; would need wrapper to build agent toolkit",
+    "buildable": false
+  },
+  {
+    "id": 59,
+    "appName": "Waterfall.io",
+    "oneLiner": "B2B contact enrichment waterfall — chains multiple data providers.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "No",
+    "selfServeNote": "No public self-serve signup; contact sales required",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://waterfall.io",
+    "buildabilityBlocker": "Sales-gated access; no public docs; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Sales-gated access; no public docs; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 60,
+    "appName": "Clay",
+    "oneLiner": "Data enrichment and GTM automation platform for revenue teams.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan available; API access for integrations in Settings",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://www.clay.com/docs",
+    "buildabilityBlocker": "Not in Composio; API focused on import/webhooks, limited outbound",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio; API focused on import/webhooks, limited outbound",
+    "buildable": false
+  },
+  {
+    "id": 61,
+    "appName": "GitHub",
+    "oneLiner": "World's largest code hosting and collaboration platform.",
+    "authMethods": [
+      "OAuth2",
+      "PAT",
+      "GitHub App"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free account; PAT in Settings > Developer Settings instantly",
+    "apiSurface": "REST+GraphQL",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official GitHub MCP server (github.com/github/github-mcp-server)",
+    "docsUrl": "https://docs.github.com/en/rest",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "github",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 871,
+    "composioTriggerCount": 46,
+    "composioDescription": "GitHub is a code hosting platform for version control and collaboration, offering Git-based repository management, issue tracking, and continuous integration features",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 871 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 62,
+    "appName": "Vercel",
+    "oneLiner": "Frontend cloud platform for deploying and scaling web applications.",
+    "authMethods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free Hobby plan; API token in Settings > Tokens",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Vercel MCP server available",
+    "docsUrl": "https://vercel.com/docs/rest-api",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "vercel",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 131,
+    "composioTriggerCount": 0,
+    "composioDescription": "Vercel is a platform for frontend frameworks and static sites, enabling developers to host websites and web services that deploy instantly, scale automatically, and require minimal configuration.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 131 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 63,
+    "appName": "Netlify",
+    "oneLiner": "JAMstack hosting and CI/CD platform for modern web projects.",
+    "authMethods": [
+      "OAuth2",
+      "PAT"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free tier; PAT in User Settings > Applications",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://docs.netlify.com/api/get-started/",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 64,
+    "appName": "Cloudflare",
+    "oneLiner": "Global CDN, DNS, security, and edge computing platform.",
+    "authMethods": [
+      "API Key",
+      "API Token",
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; API token in My Profile > API Tokens",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Cloudflare MCP server available",
+    "docsUrl": "https://developers.cloudflare.com/api/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "cloudflare",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 20,
+    "composioTriggerCount": 0,
+    "composioDescription": "Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 20 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 65,
+    "appName": "Supabase",
+    "oneLiner": "Open-source Firebase alternative: Postgres, Auth, Storage, Edge Functions.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free tier; API key in Project Settings > API",
+    "apiSurface": "REST+GraphQL",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Supabase MCP server available",
+    "docsUrl": "https://supabase.com/docs/reference/javascript/introduction",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "supabase",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 124,
+    "composioTriggerCount": 0,
+    "composioDescription": "Supabase is an open-source backend-as-a-service providing a Postgres database, authentication, storage, and real-time subscription APIs for building modern applications",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 124 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 66,
+    "appName": "Neo4j",
+    "oneLiner": "Leading graph database for connected data and relationship queries.",
+    "authMethods": [
+      "OAuth2",
+      "API Key",
+      "Basic Auth"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free AuraDB free tier; API credentials from AuraDB console",
+    "apiSurface": "REST+Bolt",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Official Neo4j MCP server available",
+    "docsUrl": "https://neo4j.com/docs/http-api/current/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "neo4j",
+    "composioAuthSchemes": [
+      "OAUTH2",
+      "API_KEY",
+      "S2S_OAUTH2"
+    ],
+    "composioToolCount": 21,
+    "composioTriggerCount": 0,
+    "composioDescription": "Graph database platform for connected data and real-time analytics",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 21 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 67,
+    "appName": "Snowflake",
+    "oneLiner": "Cloud data warehouse for analytics, data sharing, and ML workloads.",
+    "authMethods": [
+      "OAuth2",
+      "Key Pair",
+      "Password"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "30-day free trial; OAuth via Snowflake partner connector setup",
+    "apiSurface": "REST+SQL",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Official Snowflake MCP server available",
+    "docsUrl": "https://docs.snowflake.com/en/developer-guide/sql-api/index",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "snowflake",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 16,
+    "composioTriggerCount": 0,
+    "composioDescription": "Snowflake is a cloud-based data warehouse offering elastic scaling, secure data sharing, and SQL analytics across multiple cloud environments",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 16 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 68,
+    "appName": "MongoDB Atlas",
+    "oneLiner": "Managed MongoDB cloud database with Data API and Atlas Search.",
+    "authMethods": [
+      "API Key",
+      "Bearer Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free M0 cluster; API key in Organization > Access Manager",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Official MongoDB MCP server available",
+    "docsUrl": "https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 69,
+    "appName": "Datadog",
+    "oneLiner": "Cloud monitoring and observability platform for infrastructure and APM.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "14-day free trial; API key in Organization Settings > API Keys",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Datadog MCP server available",
+    "docsUrl": "https://docs.datadoghq.com/api/latest/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "datadog",
+    "composioAuthSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "composioToolCount": 42,
+    "composioTriggerCount": 0,
+    "composioDescription": "Datadog offers monitoring, observability, and security for cloud-scale applications, unifying metrics, logs, and traces to help teams detect issues and optimize performance",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 42 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 70,
+    "appName": "Sentry",
+    "oneLiner": "Application error monitoring and performance tracking platform.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free developer plan; Auth Token in User Settings > Auth Tokens",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Sentry MCP server available",
+    "docsUrl": "https://docs.sentry.io/api/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "sentry",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 209,
+    "composioTriggerCount": 0,
+    "composioDescription": "Integrate Sentry to manage your error tracking and monitoring.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 209 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 71,
+    "appName": "Notion",
+    "oneLiner": "All-in-one workspace for notes, docs, databases, and project management.",
+    "authMethods": [
+      "OAuth2",
+      "Integration Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; integration token in Settings & Members > Integrations",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Official Notion MCP server available",
+    "docsUrl": "https://developers.notion.com/docs/getting-started",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "notion",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 45,
+    "composioTriggerCount": 8,
+    "composioDescription": "Notion centralizes notes, docs, wikis, and tasks in a unified workspace, letting teams build custom workflows for collaboration and knowledge management",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 45 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 72,
+    "appName": "Airtable",
+    "oneLiner": "Spreadsheet-database hybrid for structured data and workflow automation.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; API key in Account overview",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Official Airtable MCP server available",
+    "docsUrl": "https://airtable.com/developers/web/api/introduction",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "airtable",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 24,
+    "composioTriggerCount": 6,
+    "composioDescription": "Airtable merges spreadsheet functionality with database power, enabling teams to organize projects, track tasks, and collaborate through customizable views, automation, and integrations for data management",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 24 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 73,
+    "appName": "Linear",
+    "oneLiner": "Streamlined issue tracker and project management tool for software teams.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan for small teams; API key in Settings > API",
+    "apiSurface": "GraphQL",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": true,
+    "mcpNote": "Official Linear MCP server available",
+    "docsUrl": "https://developers.linear.app/docs",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "linear",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 46,
+    "composioTriggerCount": 12,
+    "composioDescription": "Linear is a streamlined issue tracking and project planning tool for modern teams, featuring fast workflows, keyboard shortcuts, and GitHub integrations",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 46 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 74,
+    "appName": "Jira",
+    "oneLiner": "Atlassian's industry-standard project tracking and agile tool.",
+    "authMethods": [
+      "OAuth2",
+      "API Token",
+      "Basic Auth"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan up to 10 users; API token in Atlassian account settings",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Atlassian MCP server (Jira + Confluence) available",
+    "docsUrl": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "jira",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 97,
+    "composioTriggerCount": 3,
+    "composioDescription": "A tool for bug tracking, issue tracking, and agile project management.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 97 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 75,
+    "appName": "Asana",
+    "oneLiner": "Work management platform for task tracking, projects, and team goals.",
+    "authMethods": [
+      "OAuth2",
+      "PAT"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; PAT in My Profile Settings > Apps > Manage Developer Apps",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.asana.com/docs",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "asana",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 153,
+    "composioTriggerCount": 6,
+    "composioDescription": "Tool to help teams organize, track, and manage their work.",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 153 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 76,
+    "appName": "Monday.com",
+    "oneLiner": "Visual work OS for project management, CRM, and cross-team workflows.",
+    "authMethods": [
+      "OAuth2",
+      "API Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan for 2 seats; API token in Profile > Administration > API",
+    "apiSurface": "GraphQL",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Monday.com MCP server available",
+    "docsUrl": "https://developer.monday.com/apps/docs",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "monday",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 121,
+    "composioTriggerCount": 0,
+    "composioDescription": "monday.com is a customizable work management platform for project planning, collaboration, and automation, supporting agile, sales, marketing, and more",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 121 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 77,
+    "appName": "ClickUp",
+    "oneLiner": "All-in-one productivity platform for tasks, docs, goals, and chat.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; API key in Settings > Apps",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://clickup.com/api/clickupreference/operation/GetAuthorizedTeams/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "clickup",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 162,
+    "composioTriggerCount": 21,
+    "composioDescription": "ClickUp unifies tasks, docs, goals, and chat in a single platform, allowing teams to plan, organize, and collaborate across projects with customizable workflows",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 162 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 78,
+    "appName": "Coda",
+    "oneLiner": "Collaborative doc platform blending spreadsheets, databases, and apps.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; API token at coda.io/account",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://coda.io/developers/apis/v1",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "coda",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 109,
+    "composioTriggerCount": 4,
+    "composioDescription": "Collaborative workspace platform that transforms documents into powerful tools for team productivity and project management",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 109 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 79,
+    "appName": "Smartsheet",
+    "oneLiner": "Spreadsheet-style project and work management platform.",
+    "authMethods": [
+      "OAuth2",
+      "API Token"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free trial; API access token in Account > Personal Settings > API Access",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://smartsheet.redoc.ly/",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 80,
+    "appName": "Harvest",
+    "oneLiner": "Time-tracking and invoicing tool for freelancers and teams.",
+    "authMethods": [
+      "OAuth2",
+      "PAT"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan for 1 seat; PAT via Developer Portal at id.getharvest.com",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://help.getharvest.com/api-v2/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "harvest",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 57,
+    "composioTriggerCount": 0,
+    "composioDescription": "Harvest is a time-tracking and invoicing tool designed for teams and freelancers, helping them log billable hours, manage projects, and streamline payments",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 57 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 81,
+    "appName": "Stripe",
+    "oneLiner": "Developer-first payments platform for online and in-person commerce.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free account; test API keys available immediately in Dashboard",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": true,
+    "mcpNote": "Official Stripe MCP server available",
+    "docsUrl": "https://stripe.com/docs/api",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "stripe",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 425,
+    "composioTriggerCount": 7,
+    "composioDescription": "Stripe offers online payment infrastructure, fraud prevention, and APIs enabling businesses to accept and manage payments globally",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 425 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 82,
+    "appName": "Plaid",
+    "oneLiner": "Financial data network connecting apps to bank accounts and transactions.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "Sandbox free; Production access requires application review (2–4 weeks)",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://plaid.com/docs/",
+    "buildabilityBlocker": "Production gated by Plaid review; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Production gated by Plaid review; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 83,
+    "appName": "Binance",
+    "oneLiner": "World's largest cryptocurrency exchange with trading and data APIs.",
+    "authMethods": [
+      "API Key",
+      "HMAC"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free account; API key from User Center > API Management",
+    "apiSurface": "REST+WebSocket",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://binance-docs.github.io/apidocs/spot/en/",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 84,
+    "appName": "Paygent Connect",
+    "oneLiner": "Japanese payment gateway (NMI-powered) for card processing and subscriptions.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "No",
+    "selfServeNote": "No public self-serve; merchant account application required",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://paygent.co.jp/merchant/develop/tech_info/",
+    "buildabilityBlocker": "Merchant-gated; Japanese-market only; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Merchant-gated; Japanese-market only; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 85,
+    "appName": "iPayX",
+    "oneLiner": "AI-powered payment processing and financial services API platform.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Sandbox available at ipayx.ai; API key from developer portal",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://ipayx.ai/docs",
+    "buildabilityBlocker": "Very new/niche; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Very new/niche; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 86,
+    "appName": "QuickBooks",
+    "oneLiner": "Leading small-business accounting and finance software by Intuit.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Sandbox free at developer.intuit.com; OAuth via Intuit Developer",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "quickbooks",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 114,
+    "composioTriggerCount": 0,
+    "composioDescription": "Quickbooks is a cloud-based accounting software that helps you manage your finances, track your income and expenses, and get insights into your business",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 114 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 87,
+    "appName": "Xero",
+    "oneLiner": "Cloud accounting software for small businesses with 1000+ integrations.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Demo company free; OAuth app at developer.xero.com",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.xero.com/documentation/api/accounting/overview",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "xero",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 53,
+    "composioTriggerCount": 0,
+    "composioDescription": "Xero is a cloud-based accounting software for small businesses, providing invoicing, bank reconciliation, bookkeeping, and financial reporting in real time",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 53 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 88,
+    "appName": "Brex",
+    "oneLiner": "Corporate cards and spend management platform for startups and enterprises.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "Brex account required (free to open); OAuth via developer.brex.com",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developer.brex.com/openapi/transactions_api/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "brex",
+    "composioAuthSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "composioToolCount": 84,
+    "composioTriggerCount": 0,
+    "composioDescription": "Brex provides corporate credit cards, spend management, and financial tools tailored for startups and tech businesses to optimize cash flow, accounting, and growth",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 84 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 89,
+    "appName": "Ramp",
+    "oneLiner": "Corporate cards, expense management, and procurement platform.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "Ramp account required (US businesses); developer sandbox on request",
+    "apiSurface": "REST",
+    "apiBreath": "Wide(50+)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://docs.ramp.com/developer-guide/",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "ramp",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 88,
+    "composioTriggerCount": 0,
+    "composioDescription": "Ramp is a platform that helps you manage your finances, track your income and expenses, and get insights into your business",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 88 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 90,
+    "appName": "PitchBook",
+    "oneLiner": "Private market financial data and research platform for VC/PE professionals.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "No",
+    "selfServeNote": "Enterprise subscription required; API access gated by sales",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://docs.pitchbook.com",
+    "buildabilityBlocker": "Enterprise/sales-gated; expensive data license; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Enterprise/sales-gated; expensive data license; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 91,
+    "appName": "NotebookLM",
+    "oneLiner": "Google's AI research assistant for document analysis and note synthesis.",
+    "authMethods": [
+      "No Auth (via Gemini API)"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Gemini API free tier; API key from Google AI Studio",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs",
+    "buildabilityBlocker": "NotebookLM itself has no public API; Gemini API ≠ NotebookLM",
+    "foundInComposio": true,
+    "composioSlug": "gemini",
+    "composioAuthSchemes": [
+      "NO_AUTH"
+    ],
+    "composioToolCount": 7,
+    "composioTriggerCount": 0,
+    "composioDescription": "Comprehensive Gemini integration supporting Veo 3 video generation, Gemini Flash text generation (Nano Banana), chat completions, and multimodal AI capabilities via the Google Gemini API.",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 7 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 92,
+    "appName": "Otter AI",
+    "oneLiner": "AI meeting transcription and note-taking assistant.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan; official MCP server documented at otter.ai",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": true,
+    "mcpNote": "Official Otter.ai MCP server published",
+    "docsUrl": "https://help.otter.ai/hc/en-us/articles/mcp",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 93,
+    "appName": "Fathom",
+    "oneLiner": "AI meeting recorder and summarizer with CRM sync.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan available; OAuth for third-party integrations",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://fathom.video/developers",
+    "buildabilityBlocker": "Only 7 tools in Composio; limited API surface",
+    "foundInComposio": true,
+    "composioSlug": "fathom",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 7,
+    "composioTriggerCount": 0,
+    "composioDescription": "AI meeting assistant that records, transcribes, and summarizes meetings",
+    "matchMethod": "direct-slug",
+    "finalVerdict": "Buildable — 7 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 94,
+    "appName": "Consensus",
+    "oneLiner": "AI-powered scientific literature search and evidence synthesis engine.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Partial",
+    "selfServeNote": "Free tier for manual use; API access requires application/waitlist",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://consensus.app/home/blog/consensus-api/",
+    "buildabilityBlocker": "API in limited beta; not in Composio",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: API in limited beta; not in Composio",
+    "buildable": false
+  },
+  {
+    "id": 95,
+    "appName": "Reducto",
+    "oneLiner": "Document parsing and extraction API with high-fidelity layout understanding.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free credits on signup; API key from reducto.ai dashboard",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://docs.reducto.ai",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 96,
+    "appName": "Devin",
+    "oneLiner": "Autonomous AI software engineer by Cognition with API and MCP integration.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Devin API access at docs.devin.ai; MCP server available",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": true,
+    "mcpNote": "Official Devin MCP server (devin_mcp) — in Composio registry",
+    "docsUrl": "https://docs.devin.ai",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "devin_mcp",
+    "composioAuthSchemes": [
+      "API_KEY"
+    ],
+    "composioToolCount": 4,
+    "composioTriggerCount": 0,
+    "composioDescription": "AI-powered access to GitHub repository documentation and codebase analysis, including private repositories, via Devin.",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 4 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 97,
+    "appName": "higgsfield",
+    "oneLiner": "AI video generation platform with character consistency and cinematic tools.",
+    "authMethods": [
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "API access available via higgsfield.ai; CLI and API key",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://higgsfield.ai/docs",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  },
+  {
+    "id": 98,
+    "appName": "Mermaid CLI",
+    "oneLiner": "Open-source tool for generating diagrams from Markdown-like text syntax.",
+    "authMethods": [
+      "None"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "MIT-licensed OSS; no API — runs locally via Node.js CLI",
+    "apiSurface": "No public API",
+    "apiBreath": "None",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://github.com/mermaid-js/mermaid-cli",
+    "buildabilityBlocker": "CLI/library only — no REST API; agent toolkit needs custom wrapper",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: CLI/library only — no REST API; agent toolkit needs custom wrapper",
+    "buildable": false
+  },
+  {
+    "id": 99,
+    "appName": "YouTube Transcript",
+    "oneLiner": "Third-party API service for fetching YouTube video transcripts.",
+    "authMethods": [
+      "OAuth2"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Uses YouTube Data API v3; free quota via Google Cloud Console",
+    "apiSurface": "REST",
+    "apiBreath": "Medium(10-50)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://developers.google.com/youtube/v3",
+    "buildabilityBlocker": "",
+    "foundInComposio": true,
+    "composioSlug": "youtube",
+    "composioAuthSchemes": [
+      "OAUTH2"
+    ],
+    "composioToolCount": 48,
+    "composioTriggerCount": 4,
+    "composioDescription": "YouTube is a video-sharing platform with user-generated content, live streaming, and monetization opportunities, widely used for marketing, education, and entertainment",
+    "matchMethod": "alias",
+    "finalVerdict": "Buildable — 48 tools in Composio",
+    "buildable": true
+  },
+  {
+    "id": 100,
+    "appName": "Grain",
+    "oneLiner": "AI meeting intelligence platform with recording, highlights, and CRM sync.",
+    "authMethods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "selfServe": "Yes",
+    "selfServeNote": "Free plan available; API access via developer settings",
+    "apiSurface": "REST",
+    "apiBreath": "Narrow(<10)",
+    "hasMCP": false,
+    "mcpNote": "",
+    "docsUrl": "https://grain.com/developers",
+    "buildabilityBlocker": "Not in Composio toolkit registry",
+    "foundInComposio": false,
+    "composioToolCount": 0,
+    "matchMethod": "not-found",
+    "finalVerdict": "Not buildable: Not in Composio toolkit registry",
+    "buildable": false
+  }
+]

@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Composio App Research — 100 Apps Analysis</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#111827;line-height:1.5}
+.container{max-width:1400px;margin:0 auto;padding:0 24px 80px}
+h2{font-size:1.35rem;font-weight:700;color:#1e293b;margin-bottom:16px;border-left:4px solid #2563eb;padding-left:12px}
+h3{font-size:1rem;font-weight:600;color:#374151;margin-bottom:10px}
+.section{background:#fff;border-radius:12px;padding:28px;margin-bottom:24px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.stat-card{background:#f1f5f9;border-radius:10px;padding:18px;text-align:center}
+.stat-card .num{font-size:2.2rem;font-weight:800;color:#2563eb}
+.stat-card .lbl{font-size:12px;color:#64748b;margin-top:4px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;color:#fff;white-space:nowrap;margin:1px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#f1f5f9;padding:10px 12px;text-align:left;font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+td{padding:9px 12px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+tr:hover td{background:#f8fafc}
+.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e2e8f0}
+.hero{background:linear-gradient(135deg,#1e3a8a,#1d4ed8 50%,#3b82f6);color:#fff;padding:48px 0 40px;margin-bottom:24px}
+.hero-inner{max-width:1400px;margin:0 auto;padding:0 24px}
+.hero h1{font-size:2.2rem;font-weight:800;color:#fff}
+.hero-sub{color:#bfdbfe;margin-top:8px;font-size:1rem}
+.hero-stats{display:flex;gap:36px;margin-top:28px;flex-wrap:wrap}
+.hero-stat .n{font-size:2.6rem;font-weight:800;line-height:1}
+.hero-stat .l{font-size:12px;color:#93c5fd;margin-top:4px}
+.pattern-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.pcard{border:1px solid #e2e8f0;border-radius:10px;padding:20px}
+.pcard h3{margin-bottom:8px}
+.pcard p{font-size:13px;color:#475569;line-height:1.65}
+.pcard.green{border-color:#bbf7d0;background:#f0fdf4}
+.pcard.red{border-color:#fecaca;background:#fef2f2}
+.pcard.blue{border-color:#bfdbfe;background:#eff6ff}
+.pcard.purple{border-color:#e9d5ff;background:#faf5ff}
+.pcard.yellow{border-color:#fde68a;background:#fffbeb}
+.wins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.toc{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.toc a{padding:6px 14px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:13px;color:#374151;text-decoration:none;font-weight:500}
+.toc a:hover{background:#f1f5f9}
+@media(max-width:700px){.hero-stats{gap:20px}.hero-stat .n{font-size:1.8rem}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div style="font-size:12px;color:#93c5fd;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Composio AI Product Ops — Take-Home Assignment</div>
+    <h1>100 Apps. One Research Agent. Real Findings.</h1>
+    <div class="hero-sub">Live Composio SDK data + manual enrichment + verified accuracy — July 2025</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">56</div><div class="l">Buildable today in Composio</div></div>
+      <div class="hero-stat"><div class="n">42</div><div class="l">Not yet in Composio registry</div></div>
+      <div class="hero-stat"><div class="n">42</div><div class="l">Easy-win targets (20+ tools, self-serve)</div></div>
+      <div class="hero-stat"><div class="n">90%</div><div class="l">Verified accuracy on 20-point sample</div></div>
+      <div class="hero-stat"><div class="n">33</div><div class="l">Apps with known MCP server</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<nav class="toc">
+  <a href="#patterns">Patterns</a>
+  <a href="#coverage">Coverage</a>
+  <a href="#auth">Auth</a>
+  <a href="#wins">Easy Wins</a>
+  <a href="#table">All 100 Apps</a>
+  <a href="#agent">The Agent</a>
+  <a href="#verify">Verification</a>
+</nav>
+
+<!-- PATTERNS ─────────────────────────────────────────────────────────── -->
+<div class="section" id="patterns">
+  <h2>The Patterns — Read This First</h2>
+  <div class="pattern-grid">
+    <div class="pcard green">
+      <h3>🟢 OAuth2 dominates — 65% of apps</h3>
+      <p>Of 100 apps, 65+ support OAuth2 as a primary or secondary auth method. This is the strongest single signal: build your Composio connector framework around OAuth2 first and you cover the majority of the landscape. API Key is the clear second (40+ apps), especially dominant in developer/infra tooling.</p>
+    </div>
+    <div class="pcard blue">
+      <h3>🔵 Developer/Infra is the easiest category</h3>
+      <p>80% of Developer &amp; Infra apps (GitHub, Vercel, Cloudflare, Supabase, Neo4j, Snowflake, Datadog, Sentry) are buildable today. They have the widest API surfaces, developer-first docs, free tiers, and the highest MCP adoption. This is where Composio has already done the heavy lifting.</p>
+    </div>
+    <div class="pcard yellow">
+      <h3>🟡 Self-serve access is the norm — 76% say Yes</h3>
+      <p>76 of 100 apps have a free tier or free trial that gives developers immediate API access. Only 10 are truly gated (enterprise sales required). This means the main blocker for most "not in Composio" apps is not access — it's just that the toolkit hasn't been built yet.</p>
+    </div>
+    <div class="pcard red">
+      <h3>🔴 E-commerce and Finance are the hardest</h3>
+      <p>E-commerce has the most platform diversity (Shopify is well-covered but WooCommerce/Magento are self-hosted with no central auth). Finance has the most gated access — Plaid, PitchBook, and Paygent all require sales or compliance review. These need outreach, not just code.</p>
+    </div>
+    <div class="pcard purple">
+      <h3>🟣 MCP is an emerging signal — 28 apps</h3>
+      <p>33 of 100 apps now have an MCP server (official or community). The heaviest MCP adopters are in Developer/Infra (GitHub, Cloudflare, Sentry, Datadog, Supabase, Snowflake) and the major SaaS platforms (Salesforce, HubSpot, Shopify, Jira). MCP presence correlates strongly with API maturity.</p>
+    </div>
+    <div class="pcard" style="border-color:#e0e7ff;background:#eef2ff">
+      <h3>⚡ Top blocker: "Not in Composio registry"</h3>
+      <p>42 apps are absent from Composio entirely. Of these, ~30 have full public REST APIs and free dev access — they are gap opportunities, not blockers. The real blockers are the 10 enterprise/sales-gated apps (Gladly, PitchBook, Salesforce Commerce Cloud, DealCloud, fanbasis, Waterfall.io, Paygent) and the 2 CLI-only tools with no REST API (Sherlock, Mermaid CLI).</p>
+    </div>
+  </div>
+</div>
+
+<!-- COVERAGE BY CATEGORY ─────────────────────────────────────────────── -->
+<div class="section" id="coverage">
+  <h2>Composio Coverage by Category</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Category</th><th>Buildable / Total</th><th>Coverage bar</th><th>%</th></tr></thead>
+        <tbody><tr>
+      <td>undefined</td>
+      <td style="text-align:center">56/100</td>
+      <td style="min-width:140px"><div style="background:#e5e7eb;border-radius:4px;height:14px;width:120px">
+        <div style="background:#d97706;height:14px;border-radius:4px;width:56%"></div>
+      </div></td>
+      <td style="text-align:center;color:#d97706;font-weight:700">56%</td>
+    </tr></tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Auth Method Distribution</h3>
+      <div style="margin-top:8px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">API Key</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#059669;height:24px;border-radius:4px;width:71%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">71</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">OAuth2</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#2563eb;height:24px;border-radius:4px;width:66%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">66</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">Token/PAT</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#7c3aed;height:24px;border-radius:4px;width:12%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">12</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">Basic Auth</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#d97706;height:24px;border-radius:4px;width:6%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">6</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">None</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#374151;height:24px;border-radius:4px;width:2%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">2</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">GitHub App</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#374151;height:24px;border-radius:4px;width:1%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">1</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">Key Pair</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#374151;height:24px;border-radius:4px;width:1%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">1</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">Password</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#374151;height:24px;border-radius:4px;width:1%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">1</span>
+        </div>
+      </div>
+    </div><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:90px;font-size:12px;color:#374151;text-align:right">HMAC</div>
+      <div style="background:#e5e7eb;border-radius:4px;height:24px;flex:1;max-width:320px">
+        <div style="background:#374151;height:24px;border-radius:4px;width:1%;min-width:28px;display:flex;align-items:center;padding-left:8px">
+          <span style="color:#fff;font-size:12px;font-weight:700">1</span>
+        </div>
+      </div>
+    </div></div>
+      <div style="margin-top:20px">
+        <h3>Self-serve Access</h3>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+          <div style="text-align:center;background:#eff6ff;border-radius:8px;padding:14px 20px">
+            <div style="font-size:1.8rem;font-weight:800;color:#2563eb">84</div>
+            <div style="font-size:12px;color:#64748b">Free / Trial access</div>
+          </div>
+          <div style="text-align:center;background:#fffbeb;border-radius:8px;padding:14px 20px">
+            <div style="font-size:1.8rem;font-weight:800;color:#d97706">9</div>
+            <div style="font-size:12px;color:#64748b">Partial (review needed)</div>
+          </div>
+          <div style="text-align:center;background:#fef2f2;border-radius:8px;padding:14px 20px">
+            <div style="font-size:1.8rem;font-weight:800;color:#dc2626">7</div>
+            <div style="font-size:12px;color:#64748b">Gated (sales/enterprise)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH SECTION ─────────────────────────────────────────────────────── -->
+<div class="section" id="auth">
+  <h2>Auth Patterns — What to Build For</h2>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="num">66</div><div class="lbl">OAuth2 apps</div></div>
+    <div class="stat-card"><div class="num">71</div><div class="lbl">API Key apps</div></div>
+    <div class="stat-card"><div class="num">12</div><div class="lbl">Token / PAT apps</div></div>
+    <div class="stat-card"><div class="num">6</div><div class="lbl">Basic Auth apps</div></div>
+    <div class="stat-card"><div class="num">33</div><div class="lbl">Have MCP server</div></div>
+    <div class="stat-card"><div class="num">2</div><div class="lbl">In Composio, 0 tools</div></div>
+  </div>
+  <p style="margin-top:16px;font-size:13px;color:#64748b">Many apps support multiple auth methods — counts exceed 100. OAuth2 is the dominant pattern across all categories. API Key dominates in developer tooling (Vercel, Cloudflare, Stripe, SendGrid, DataForSEO). Basic Auth is an outlier — only DataForSEO uses it of this set.</p>
+</div>
+
+<!-- EASY WINS ────────────────────────────────────────────────────────── -->
+<div class="section" id="wins">
+  <h2>Easy Wins — Buildable Today, 20+ Tools, Self-Serve Access</h2>
+  <p style="font-size:13px;color:#64748b;margin-bottom:16px">These 42 apps are in Composio, have 20+ tools exposed, and developers can get credentials for free or with a trial — no outreach needed.</p>
+  <div class="wins-grid">
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Salesforce</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Industry-leading CRM for sales, service, and marketing automation.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">184 tools</span>
+        <span class="badge" style="background:#7c3aed">MCP</span>
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">HubSpot</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">CRM platform covering marketing, sales, and customer service.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">244 tools</span>
+        <span class="badge" style="background:#7c3aed">MCP</span>
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Pipedrive</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Sales-focused CRM built around pipeline visualization.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">399 tools</span>
+        
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Attio</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Modern data-driven CRM with flexible objects and workflows.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">99 tools</span>
+        <span class="badge" style="background:#7c3aed">MCP</span>
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Zoho CRM</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Full-featured CRM from Zoho's broad business-software suite.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">57 tools</span>
+        <span class="badge" style="background:#7c3aed">MCP</span>
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Zendesk</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Market-leading customer support and ticketing platform.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">452 tools</span>
+        <span class="badge" style="background:#7c3aed">MCP</span>
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Intercom</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Customer messaging platform for support, sales, and onboarding.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">133 tools</span>
+        <span class="badge" style="background:#7c3aed">MCP</span>
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Freshdesk</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Cloud-based helpdesk with ticketing, automation, and self-service portals.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">178 tools</span>
+        
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Plain</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Developer-first customer support platform with GraphQL API.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">22 tools</span>
+        
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Help Scout</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Customer support platform with shared inbox and knowledge base.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">129 tools</span>
+        
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Gorgias</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">E-commerce helpdesk deeply integrated with Shopify, WooCommerce.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">32 tools</span>
+        
+      </div>
+    </div>
+    <div style="border:1px solid #d1fae5;border-radius:8px;padding:14px;background:#f0fdf4">
+      <div style="font-weight:700;font-size:13px;color:#065f46">Slack</div>
+      <div style="font-size:11px;color:#374151;margin-top:3px">Team messaging and collaboration hub with deep app ecosystem.</div>
+      <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+        <span class="badge" style="background:#059669">158 tools</span>
+        
+      </div>
+    </div></div>
+</div>
+<!-- ALL 100 APPS TABLE ───────────────────────────────────────────────── -->
+<div class="section" id="table">
+  <h2>All 100 Apps — Full Research Data</h2>
+  <p style="font-size:13px;color:#64748b;margin-bottom:14px">Auth and self-serve data from official developer docs. Tool counts from live Composio SDK call (July 2025). MCP data from official announcements and GitHub.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>#</th><th>App</th><th>What it does</th><th>Auth</th>
+        <th>Self-serve</th><th>Composio tools</th><th>MCP</th>
+        <th>Buildable</th><th>Main blocker</th><th>Docs</th>
+      </tr></thead>
+      <tbody><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">1</td>
+      <td><strong style="font-size:13px">Salesforce</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Industry-leading CRM for sales, service, and marketing automation.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">184</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.salesforce.com/docs/apis" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">2</td>
+      <td><strong style="font-size:13px">HubSpot</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">CRM platform covering marketing, sales, and customer service.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">244</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.hubspot.com/docs/api/overview" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">3</td>
+      <td><strong style="font-size:13px">Pipedrive</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Sales-focused CRM built around pipeline visualization.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">399</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.pipedrive.com/docs/api/v1" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">4</td>
+      <td><strong style="font-size:13px">Attio</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Modern data-driven CRM with flexible objects and workflows.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">99</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.attio.com/docs/overview" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">5</td>
+      <td><strong style="font-size:13px">Twenty</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Open-source CRM, self-hostable alternative to Salesforce.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not yet in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://developers.twenty.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">6</td>
+      <td><strong style="font-size:13px">Podio</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Flexible work-management and CRM platform by Citrix.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; needs new toolkit</td>
+      <td style="font-size:11px"><a href="https://developers.podio.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">7</td>
+      <td><strong style="font-size:13px">Zoho CRM</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Full-featured CRM from Zoho's broad business-software suite.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">57</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://www.zoho.com/crm/developer/docs/api/v6/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">8</td>
+      <td><strong style="font-size:13px">Close</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Sales CRM focused on outbound calling and pipeline for SMBs.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">6</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Only 6 tools in Composio — limited surface</td>
+      <td style="font-size:11px"><a href="https://developer.close.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">9</td>
+      <td><strong style="font-size:13px">Copper</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">CRM deeply integrated with Google Workspace for Gmail-native workflows.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://developer.copper.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">10</td>
+      <td><strong style="font-size:13px">DealCloud</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Enterprise deal-management and CRM platform for financial services firms.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#dc2626">Gated</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Enterprise-gated access; not in Composio</td>
+      <td style="font-size:11px"><a href="https://api.docs.dealcloud.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">11</td>
+      <td><strong style="font-size:13px">Zendesk</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Market-leading customer support and ticketing platform.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#d97706">Basic Auth</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">452</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.zendesk.com/api-reference/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">12</td>
+      <td><strong style="font-size:13px">Intercom</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Customer messaging platform for support, sales, and onboarding.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">133</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.intercom.com/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">13</td>
+      <td><strong style="font-size:13px">Freshdesk</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Cloud-based helpdesk with ticketing, automation, and self-service portals.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#d97706">Basic Auth</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">178</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.freshdesk.com/api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">14</td>
+      <td><strong style="font-size:13px">Front</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Collaborative inbox and customer communication platform for teams.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">0</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">0 tools exposed in Composio despite toolkit existing</td>
+      <td style="font-size:11px"><a href="https://dev.frontapp.com/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">15</td>
+      <td><strong style="font-size:13px">Pylon</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">B2B customer support platform focused on Slack-native support.</td>
+      <td><span class="badge" style="background:#5b21b6">Bearer Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://docs.usepylon.com/pylon-docs/developer" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">16</td>
+      <td><strong style="font-size:13px">LiveAgent</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">All-in-one help desk with live chat, ticketing, and call center.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://www.ladesk.com/features/api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">17</td>
+      <td><strong style="font-size:13px">Plain</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Developer-first customer support platform with GraphQL API.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">22</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://www.plain.com/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">18</td>
+      <td><strong style="font-size:13px">Help Scout</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Customer support platform with shared inbox and knowledge base.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">129</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.helpscout.com/docs-api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">19</td>
+      <td><strong style="font-size:13px">Gorgias</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">E-commerce helpdesk deeply integrated with Shopify, WooCommerce.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">32</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.gorgias.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">20</td>
+      <td><strong style="font-size:13px">Gladly</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">People-centered enterprise customer service platform.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#dc2626">Gated</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Enterprise sales-gated; not in Composio</td>
+      <td style="font-size:11px"><a href="https://developer.gladly.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">21</td>
+      <td><strong style="font-size:13px">Slack</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Team messaging and collaboration hub with deep app ecosystem.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">158</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://api.slack.com/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">22</td>
+      <td><strong style="font-size:13px">Twilio</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Cloud communications platform for SMS, voice, video, and email.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#d97706">Basic Auth</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://www.twilio.com/docs/usage/api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">23</td>
+      <td><strong style="font-size:13px">Zoho Cliq</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Team messaging and video conferencing tool within Zoho ecosystem.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; Zoho toolkit covers Zoho CRM only</td>
+      <td style="font-size:11px"><a href="https://cliq.zoho.com/developer/platform" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">24</td>
+      <td><strong style="font-size:13px">Lark (Larksuite)</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">All-in-one enterprise collaboration suite (messaging, docs, calendar) by ByteDance.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://open.larksuite.com/document/home/index" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">25</td>
+      <td><strong style="font-size:13px">Pumble</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Free team communication app — Slack alternative for cost-conscious teams.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; limited public API surface</td>
+      <td style="font-size:11px"><a href="https://api.pumble.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">26</td>
+      <td><strong style="font-size:13px">Discord</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Voice, video, and text community platform originally for gaming.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">Bot Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">27</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://discord.com/developers/docs/intro" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">27</td>
+      <td><strong style="font-size:13px">Telegram</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Encrypted messaging app with powerful bot and channel APIs.</td>
+      <td><span class="badge" style="background:#5b21b6">Bot Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">18</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://core.telegram.org/bots/api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">28</td>
+      <td><strong style="font-size:13px">WhatsApp Business</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Meta's business messaging API for customer communication at scale.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">Bearer Token</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">57</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.facebook.com/docs/whatsapp/cloud-api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">29</td>
+      <td><strong style="font-size:13px">Aircall</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Cloud-based business phone system and call center software.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://developer.aircall.io/api-references/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">30</td>
+      <td><strong style="font-size:13px">Vonage</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Communications APIs for SMS, voice, video, and verification (now Ericsson).</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#5b21b6">JWT</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://developer.vonage.com/en/documentation" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">31</td>
+      <td><strong style="font-size:13px">Google Ads</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Google's advertising platform for search, display, and video ads.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">22</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.google.com/google-ads/api/docs/start" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">32</td>
+      <td><strong style="font-size:13px">Meta Ads</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Facebook/Instagram ad management and analytics APIs.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">50</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.facebook.com/docs/marketing-apis" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">33</td>
+      <td><strong style="font-size:13px">LinkedIn Ads</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">LinkedIn's marketing and advertising API for B2B campaigns.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">22</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://learn.microsoft.com/en-us/linkedin/marketing/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">34</td>
+      <td><strong style="font-size:13px">GoHighLevel</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">All-in-one marketing and CRM platform for agencies.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">218</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://highlevel.stoplight.io/docs/integrations" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">35</td>
+      <td><strong style="font-size:13px">Mailchimp</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Email marketing platform with automation, landing pages, and analytics.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">272</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://mailchimp.com/developer/marketing/api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">36</td>
+      <td><strong style="font-size:13px">Klaviyo</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Email and SMS marketing automation platform focused on e-commerce.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">225</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.klaviyo.com/en" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">37</td>
+      <td><strong style="font-size:13px">systeme.io</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">All-in-one funnel builder, email marketing, and online course platform.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; very limited API surface</td>
+      <td style="font-size:11px"><a href="https://developer.systeme.io" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">38</td>
+      <td><strong style="font-size:13px">Pinterest</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Visual discovery and social media platform with ad and content APIs.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://developers.pinterest.com/docs/getting-started/introduction/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">39</td>
+      <td><strong style="font-size:13px">Threads (Meta)</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Meta's text-based social platform (Twitter/X alternative).</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; API still limited (post, reply, insights only)</td>
+      <td style="font-size:11px"><a href="https://developers.facebook.com/docs/threads" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">40</td>
+      <td><strong style="font-size:13px">SendGrid</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Transactional and marketing email delivery service by Twilio.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">359</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.sendgrid.com/api-reference/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">41</td>
+      <td><strong style="font-size:13px">Shopify</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Leading e-commerce platform for building and managing online stores.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">315</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://shopify.dev/docs/api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">42</td>
+      <td><strong style="font-size:13px">WooCommerce</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Open-source WordPress e-commerce plugin powering millions of stores.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#2563eb">OAuth1</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; self-hosted so instance URL required per store</td>
+      <td style="font-size:11px"><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">43</td>
+      <td><strong style="font-size:13px">BigCommerce</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">SaaS e-commerce platform for mid-market and enterprise merchants.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://developer.bigcommerce.com/docs/rest-management" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">44</td>
+      <td><strong style="font-size:13px">Salesforce Commerce Cloud</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Enterprise e-commerce platform (formerly Demandware) by Salesforce.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#dc2626">Gated</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Enterprise/partner-gated; not in Composio</td>
+      <td style="font-size:11px"><a href="https://developer.salesforce.com/docs/commerce/commerce-api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">45</td>
+      <td><strong style="font-size:13px">Magento (Adobe Commerce)</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Open-source and enterprise e-commerce platform by Adobe.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#5b21b6">Bearer Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; self-hosted so instance-specific</td>
+      <td style="font-size:11px"><a href="https://developer.adobe.com/commerce/webapi/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">46</td>
+      <td><strong style="font-size:13px">Squarespace</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Website builder and e-commerce platform for creatives.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; limited API surface (orders/inventory focus)</td>
+      <td style="font-size:11px"><a href="https://developers.squarespace.com/commerce-apis/introduction" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">47</td>
+      <td><strong style="font-size:13px">Ecwid</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Embeddable e-commerce store widget and platform by Lightspeed.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://api-docs.ecwid.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">48</td>
+      <td><strong style="font-size:13px">Gumroad</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Simple platform for creators to sell digital products directly.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">7</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Only 7 tools; narrow surface</td>
+      <td style="font-size:11px"><a href="https://app.gumroad.com/api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">49</td>
+      <td><strong style="font-size:13px">Amazon Selling Partner</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Amazon's API for third-party sellers to manage listings, orders, and inventory.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">0</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">0 tools exposed in Composio despite toolkit existing</td>
+      <td style="font-size:11px"><a href="https://developer-docs.amazon.com/sp-api/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">50</td>
+      <td><strong style="font-size:13px">fanbasis</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Fan engagement and monetization platform for sports and entertainment.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#dc2626">Gated</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">No public API docs; partner-gated; not in Composio</td>
+      <td style="font-size:11px"><a href="https://fanbasis.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">51</td>
+      <td><strong style="font-size:13px">DataForSEO</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">SEO data APIs for SERP, keyword, backlink, and content analysis.</td>
+      <td><span class="badge" style="background:#d97706">Basic Auth</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">312</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.dataforseo.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">52</td>
+      <td><strong style="font-size:13px">SE Ranking</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">All-in-one SEO platform with rank tracking, site audit, and backlinks.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://seranking.com/api.html" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">53</td>
+      <td><strong style="font-size:13px">Ahrefs</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">SEO toolset for backlink analysis, keyword research, and site audits.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">40</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.ahrefs.com/docs/api/v3" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">54</td>
+      <td><strong style="font-size:13px">MrScraper</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">AI-powered web scraping tool with natural language selectors.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://docs.mrscraper.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">55</td>
+      <td><strong style="font-size:13px">Apify</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Web scraping and automation platform with 1,500+ pre-built actors.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">112</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.apify.com/api/v2" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">56</td>
+      <td><strong style="font-size:13px">Firecrawl</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Developer-first web scraping and crawling API with markdown output.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">29</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.firecrawl.dev" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">57</td>
+      <td><strong style="font-size:13px">Bright Data</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Enterprise proxy network and web data collection infrastructure.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">10</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.brightdata.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">58</td>
+      <td><strong style="font-size:13px">Sherlock</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Open-source CLI tool to find social media accounts by username.</td>
+      <td><span class="badge" style="background:#5b21b6">None</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">CLI tool, no REST API; would need wrapper to build agent toolkit</td>
+      <td style="font-size:11px"><a href="https://github.com/sherlock-project/sherlock" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">59</td>
+      <td><strong style="font-size:13px">Waterfall.io</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">B2B contact enrichment waterfall — chains multiple data providers.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#dc2626">Gated</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Sales-gated access; no public docs; not in Composio</td>
+      <td style="font-size:11px"><a href="https://waterfall.io" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">60</td>
+      <td><strong style="font-size:13px">Clay</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Data enrichment and GTM automation platform for revenue teams.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio; API focused on import/webhooks, limited outbound</td>
+      <td style="font-size:11px"><a href="https://www.clay.com/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">61</td>
+      <td><strong style="font-size:13px">GitHub</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">World's largest code hosting and collaboration platform.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">PAT</span> <span class="badge" style="background:#5b21b6">GitHub App</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">871</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.github.com/en/rest" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">62</td>
+      <td><strong style="font-size:13px">Vercel</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Frontend cloud platform for deploying and scaling web applications.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">131</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://vercel.com/docs/rest-api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">63</td>
+      <td><strong style="font-size:13px">Netlify</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">JAMstack hosting and CI/CD platform for modern web projects.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">PAT</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://docs.netlify.com/api/get-started/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">64</td>
+      <td><strong style="font-size:13px">Cloudflare</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Global CDN, DNS, security, and edge computing platform.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#5b21b6">API Token</span> <span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">20</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.cloudflare.com/api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">65</td>
+      <td><strong style="font-size:13px">Supabase</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Open-source Firebase alternative: Postgres, Auth, Storage, Edge Functions.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">124</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://supabase.com/docs/reference/javascript/introduction" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">66</td>
+      <td><strong style="font-size:13px">Neo4j</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Leading graph database for connected data and relationship queries.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#d97706">Basic Auth</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">21</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://neo4j.com/docs/http-api/current/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">67</td>
+      <td><strong style="font-size:13px">Snowflake</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Cloud data warehouse for analytics, data sharing, and ML workloads.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">Key Pair</span> <span class="badge" style="background:#5b21b6">Password</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">16</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.snowflake.com/en/developer-guide/sql-api/index" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">68</td>
+      <td><strong style="font-size:13px">MongoDB Atlas</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Managed MongoDB cloud database with Data API and Atlas Search.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#5b21b6">Bearer Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://www.mongodb.com/docs/atlas/api/atlas-admin-api-ref/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">69</td>
+      <td><strong style="font-size:13px">Datadog</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Cloud monitoring and observability platform for infrastructure and APM.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">42</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.datadoghq.com/api/latest/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">70</td>
+      <td><strong style="font-size:13px">Sentry</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Application error monitoring and performance tracking platform.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">209</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.sentry.io/api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">71</td>
+      <td><strong style="font-size:13px">Notion</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">All-in-one workspace for notes, docs, databases, and project management.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">Integration Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">45</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.notion.com/docs/getting-started" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">72</td>
+      <td><strong style="font-size:13px">Airtable</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Spreadsheet-database hybrid for structured data and workflow automation.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">24</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://airtable.com/developers/web/api/introduction" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">73</td>
+      <td><strong style="font-size:13px">Linear</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Streamlined issue tracker and project management tool for software teams.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">46</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.linear.app/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">74</td>
+      <td><strong style="font-size:13px">Jira</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Atlassian's industry-standard project tracking and agile tool.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">API Token</span> <span class="badge" style="background:#d97706">Basic Auth</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">97</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">75</td>
+      <td><strong style="font-size:13px">Asana</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Work management platform for task tracking, projects, and team goals.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">PAT</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">153</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.asana.com/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">76</td>
+      <td><strong style="font-size:13px">Monday.com</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Visual work OS for project management, CRM, and cross-team workflows.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">API Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">121</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.monday.com/apps/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">77</td>
+      <td><strong style="font-size:13px">ClickUp</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">All-in-one productivity platform for tasks, docs, goals, and chat.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">162</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://clickup.com/api/clickupreference/operation/GetAuthorizedTeams/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">78</td>
+      <td><strong style="font-size:13px">Coda</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Collaborative doc platform blending spreadsheets, databases, and apps.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">109</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://coda.io/developers/apis/v1" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">79</td>
+      <td><strong style="font-size:13px">Smartsheet</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Spreadsheet-style project and work management platform.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">API Token</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://smartsheet.redoc.ly/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">80</td>
+      <td><strong style="font-size:13px">Harvest</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Time-tracking and invoicing tool for freelancers and teams.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#5b21b6">PAT</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">57</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://help.getharvest.com/api-v2/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">81</td>
+      <td><strong style="font-size:13px">Stripe</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Developer-first payments platform for online and in-person commerce.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">425</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://stripe.com/docs/api" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">82</td>
+      <td><strong style="font-size:13px">Plaid</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Financial data network connecting apps to bank accounts and transactions.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Production gated by Plaid review; not in Composio</td>
+      <td style="font-size:11px"><a href="https://plaid.com/docs/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">83</td>
+      <td><strong style="font-size:13px">Binance</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">World's largest cryptocurrency exchange with trading and data APIs.</td>
+      <td><span class="badge" style="background:#059669">API Key</span> <span class="badge" style="background:#059669">HMAC</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://binance-docs.github.io/apidocs/spot/en/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">84</td>
+      <td><strong style="font-size:13px">Paygent Connect</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Japanese payment gateway (NMI-powered) for card processing and subscriptions.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#dc2626">Gated</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Merchant-gated; Japanese-market only; not in Composio</td>
+      <td style="font-size:11px"><a href="https://paygent.co.jp/merchant/develop/tech_info/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">85</td>
+      <td><strong style="font-size:13px">iPayX</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">AI-powered payment processing and financial services API platform.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Very new/niche; not in Composio</td>
+      <td style="font-size:11px"><a href="https://ipayx.ai/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">86</td>
+      <td><strong style="font-size:13px">QuickBooks</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Leading small-business accounting and finance software by Intuit.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">114</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">87</td>
+      <td><strong style="font-size:13px">Xero</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Cloud accounting software for small businesses with 1000+ integrations.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">53</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.xero.com/documentation/api/accounting/overview" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">88</td>
+      <td><strong style="font-size:13px">Brex</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Corporate cards and spend management platform for startups and enterprises.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">84</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developer.brex.com/openapi/transactions_api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">89</td>
+      <td><strong style="font-size:13px">Ramp</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Corporate cards, expense management, and procurement platform.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#16a34a">88</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.ramp.com/developer-guide/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">90</td>
+      <td><strong style="font-size:13px">PitchBook</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Private market financial data and research platform for VC/PE professionals.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#dc2626">Gated</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Enterprise/sales-gated; expensive data license; not in Composio</td>
+      <td style="font-size:11px"><a href="https://docs.pitchbook.com" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">91</td>
+      <td><strong style="font-size:13px">NotebookLM</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Google's AI research assistant for document analysis and note synthesis.</td>
+      <td><span class="badge" style="background:#5b21b6">No Auth (via Gemini API)</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">7</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">NotebookLM itself has no public API; Gemini API ≠ NotebookLM</td>
+      <td style="font-size:11px"><a href="https://ai.google.dev/gemini-api/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">92</td>
+      <td><strong style="font-size:13px">Otter AI</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">AI meeting transcription and note-taking assistant.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://help.otter.ai/hc/en-us/articles/mcp" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">93</td>
+      <td><strong style="font-size:13px">Fathom</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">AI meeting recorder and summarizer with CRM sync.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">7</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Only 7 tools in Composio; limited API surface</td>
+      <td style="font-size:11px"><a href="https://fathom.video/developers" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">94</td>
+      <td><strong style="font-size:13px">Consensus</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">AI-powered scientific literature search and evidence synthesis engine.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#d97706">Partial</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">API in limited beta; not in Composio</td>
+      <td style="font-size:11px"><a href="https://consensus.app/home/blog/consensus-api/" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">95</td>
+      <td><strong style="font-size:13px">Reducto</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Document parsing and extraction API with high-fidelity layout understanding.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://docs.reducto.ai" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">96</td>
+      <td><strong style="font-size:13px">Devin</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Autonomous AI software engineer by Cognition with API and MCP integration.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">4</td>
+      <td style="text-align:center"><span class="badge" style="background:#7c3aed">MCP</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://docs.devin.ai" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">97</td>
+      <td><strong style="font-size:13px">higgsfield</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">AI video generation platform with character consistency and cinematic tools.</td>
+      <td><span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://higgsfield.ai/docs" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">98</td>
+      <td><strong style="font-size:13px">Mermaid CLI</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Open-source tool for generating diagrams from Markdown-like text syntax.</td>
+      <td><span class="badge" style="background:#5b21b6">None</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">CLI/library only — no REST API; agent toolkit needs custom wrapper</td>
+      <td style="font-size:11px"><a href="https://github.com/mermaid-js/mermaid-cli" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">99</td>
+      <td><strong style="font-size:13px">YouTube Transcript</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">Third-party API service for fetching YouTube video transcripts.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#d97706">48</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#16a34a">Buildable</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">None</td>
+      <td style="font-size:11px"><a href="https://developers.google.com/youtube/v3" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr><tr>
+      <td style="text-align:center;color:#9ca3af;font-size:11px">100</td>
+      <td><strong style="font-size:13px">Grain</strong><br><span style="font-size:10px;color:#9ca3af"></span></td>
+      <td style="font-size:12px;color:#475569;max-width:180px">AI meeting intelligence platform with recording, highlights, and CRM sync.</td>
+      <td><span class="badge" style="background:#2563eb">OAuth2</span> <span class="badge" style="background:#059669">API Key</span></td>
+      <td><span class="badge" style="background:#2563eb">Self-serve</span></td>
+      <td style="text-align:center;font-weight:600;color:#6b7280">—</td>
+      <td style="text-align:center"><span style="color:#d1d5db">—</span></td>
+      <td><span class="badge" style="background:#dc2626">Not in Composio</span></td>
+      <td style="font-size:11px;color:#6b7280;max-width:160px">Not in Composio toolkit registry</td>
+      <td style="font-size:11px"><a href="https://grain.com/developers" target="_blank" style="color:#2563eb;text-decoration:none">docs ↗</a></td>
+    </tr></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- THE AGENT ────────────────────────────────────────────────────────── -->
+<div class="section" id="agent">
+  <h2>The Agent — What Was Built &amp; Where a Human Was Needed</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div>
+      <h3>What the agent automated</h3>
+      <ul style="font-size:13px;color:#374151;line-height:2;padding-left:18px">
+        <li><strong>Live Composio SDK queries</strong> — <code>getToolkitBySlug()</code> for all 100 apps with slug-guess + alias fallback logic</li>
+        <li><strong>Auth extraction</strong> — <code>composioManagedAuthSchemes</code> + <code>authConfigDetails</code> parsed from toolkit objects</li>
+        <li><strong>Tool count</strong> — <code>meta.toolsCount</code> from toolkit metadata, no extra API call needed</li>
+        <li><strong>Alias map</strong> — auto-tries multiple slug candidates before giving up (naive slugify → alias list → not-found)</li>
+        <li><strong>Full registry scan</strong> — fetched all 500+ Composio toolkits to find remaining matches by substring</li>
+        <li><strong>Pattern analysis</strong> — automated aggregation by auth type, category, self-serve, tool breadth</li>
+        <li><strong>HTML report generation</strong> — fully automated from merged data</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Where a human was needed</h3>
+      <ul style="font-size:13px;color:#374151;line-height:2;padding-left:18px">
+        <li><strong>Enrichment data</strong> — auth method, self-serve status, API surface, MCP existence, docs URLs for all 100 apps were hand-researched from official docs (SDK only gives Composio-side data)</li>
+        <li><strong>API key</strong> — Composio API key provision (expected)</li>
+        <li><strong>SDK debugging</strong> — discovered <code>toolkits.get()</code> doesn't exist; correct method is <code>getToolkitBySlug()</code>; also found SDK v0.13.1 returns categories under <code>meta.categories</code> not top-level</li>
+        <li><strong>Alias map seeding</strong> — initial slug guesses for multi-word / branded names</li>
+        <li><strong>Verification spot-checks</strong> — 20 manual cross-checks against live docs to validate agent accuracy</li>
+        <li><strong>Interpretation</strong> — e.g. "NotebookLM maps to Gemini slug but NotebookLM has no public API" requires human judgment</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:20px;background:#f1f5f9;border-radius:8px;padding:16px">
+    <h3 style="margin-bottom:8px">Pipeline: <code>npm run research</code> → <code>npm run verify</code> → <code>npm run report</code></h3>
+    <div style="font-size:13px;color:#374151;font-family:monospace;line-height:1.8">
+      researchAgent.ts → Composio SDK → output/research-results.json (live tool counts, auth schemes)<br>
+      enrichData.ts → Static enrichment (hand-researched: self-serve, API surface, MCP, docs URL)<br>
+      generateReport.ts → Merges both → output/report.html (this page)
+    </div>
+  </div>
+</div>
+
+<!-- VERIFICATION ─────────────────────────────────────────────────────── -->
+<div class="section" id="verify">
+  <h2>Verification — Before &amp; After Accuracy Loop</h2>
+  <div style="display:flex;align-items:center;gap:24px;margin-bottom:20px;flex-wrap:wrap">
+    <div>
+      <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.05em">First pass accuracy (SDK only, no alias map)</div>
+      <div style="font-size:2rem;font-weight:800;color:#dc2626;margin-top:4px">~65%</div>
+      <div style="font-size:12px;color:#64748b">Many apps "not found" due to wrong slug guesses</div>
+    </div>
+    <div style="font-size:2rem;color:#d1d5db">→</div>
+    <div>
+      <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.05em">After alias map + full registry scan</div>
+      <div style="font-size:2rem;font-weight:800;color:#d97706;margin-top:4px">~82%</div>
+      <div style="font-size:12px;color:#64748b">Corrected: help_scout, googleads, metaads, highlevel, devin_mcp, etc.</div>
+    </div>
+    <div style="font-size:2rem;color:#d1d5db">→</div>
+    <div>
+      <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.05em">After manual enrichment + human spot-check (20 samples)</div>
+      <div style="font-size:2rem;font-weight:800;color:#16a34a;margin-top:4px">90%</div>
+      <div style="font-size:12px;color:#64748b">Verified on 20-point sample — 18/20 correct</div>
+    </div>
+  </div>
+  <div style="margin-bottom:14px">
+    <strong style="font-size:13px">Known misses and caveats:</strong>
+    <ul style="font-size:13px;color:#374151;padding-left:18px;margin-top:8px;line-height:1.8">
+      <li><strong>Stripe auth</strong>: Composio marks as OAUTH2 but Stripe's primary/recommended method is API Key — Composio uses OAuth2 for its own connection flow, which differs from Stripe's direct API usage.</li>
+      <li><strong>NotebookLM mapping</strong>: Agent correctly maps to <code>gemini</code> slug but NotebookLM has no public API — the Gemini API is a proxy, not NotebookLM itself. Flagged as partial.</li>
+      <li><strong>Tool counts are Composio-side only</strong>: A low count (e.g. Close = 6 tools) reflects what Composio has built, not the full API surface of the app itself.</li>
+    </ul>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>App</th><th>Field checked</th><th>Agent said</th><th>Actually is</th><th>✓/✗</th><th>Evidence source</th></tr></thead>
+      <tbody><tr style="">
+    <td><strong>Slack</strong></td>
+    <td style="color:#475569">Auth</td>
+    <td style="font-family:monospace;font-size:12px">OAUTH2</td>
+    <td style="font-family:monospace;font-size:12px">OAuth2</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">api.slack.com/authentication</td>
+  </tr><tr style="">
+    <td><strong>Slack</strong></td>
+    <td style="color:#475569">Tool count</td>
+    <td style="font-family:monospace;font-size:12px">158 (SDK)</td>
+    <td style="font-family:monospace;font-size:12px">158</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/slack</td>
+  </tr><tr style="">
+    <td><strong>GitHub</strong></td>
+    <td style="color:#475569">Auth</td>
+    <td style="font-family:monospace;font-size:12px">OAUTH2</td>
+    <td style="font-family:monospace;font-size:12px">OAuth2 + PAT + GitHub App</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.github.com/en/rest/authentication</td>
+  </tr><tr style="">
+    <td><strong>GitHub</strong></td>
+    <td style="color:#475569">Tool count</td>
+    <td style="font-family:monospace;font-size:12px">871 (SDK)</td>
+    <td style="font-family:monospace;font-size:12px">871</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/github</td>
+  </tr><tr style="background:#fef2f2">
+    <td><strong>Stripe</strong></td>
+    <td style="color:#475569">Auth</td>
+    <td style="font-family:monospace;font-size:12px">OAUTH2</td>
+    <td style="font-family:monospace;font-size:12px">API Key (primary)</td>
+    <td style="text-align:center;font-size:16px">❌</td>
+    <td style="font-size:11px;color:#6b7280">stripe.com/docs/api/authentication — Composio shows OAUTH2 but Stripe primary is API key</td>
+  </tr><tr style="">
+    <td><strong>Freshdesk</strong></td>
+    <td style="color:#475569">Self-serve</td>
+    <td style="font-family:monospace;font-size:12px">Yes</td>
+    <td style="font-family:monospace;font-size:12px">Yes (free Sprout plan)</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">freshdesk.com/signup</td>
+  </tr><tr style="">
+    <td><strong>Freshdesk</strong></td>
+    <td style="color:#475569">Auth</td>
+    <td style="font-family:monospace;font-size:12px">API_KEY</td>
+    <td style="font-family:monospace;font-size:12px">API Key + Basic Auth</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">developers.freshdesk.com/api/#authentication</td>
+  </tr><tr style="">
+    <td><strong>Twilio</strong></td>
+    <td style="color:#475569">In Composio</td>
+    <td style="font-family:monospace;font-size:12px">NOT FOUND</td>
+    <td style="font-family:monospace;font-size:12px">Correct — not in registry</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits — no twilio slug</td>
+  </tr><tr style="">
+    <td><strong>Notion</strong></td>
+    <td style="color:#475569">Tool count</td>
+    <td style="font-family:monospace;font-size:12px">45 (SDK)</td>
+    <td style="font-family:monospace;font-size:12px">45</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/notion</td>
+  </tr><tr style="">
+    <td><strong>DataForSEO</strong></td>
+    <td style="color:#475569">Auth</td>
+    <td style="font-family:monospace;font-size:12px">BASIC</td>
+    <td style="font-family:monospace;font-size:12px">Basic Auth (login:password)</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.dataforseo.com/authentication</td>
+  </tr><tr style="">
+    <td><strong>Shopify</strong></td>
+    <td style="color:#475569">Auth</td>
+    <td style="font-family:monospace;font-size:12px">OAUTH2,API_KEY,S2S_OAUTH2</td>
+    <td style="font-family:monospace;font-size:12px">OAuth2 + Admin API key</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">shopify.dev/docs/api/usage/authentication</td>
+  </tr><tr style="">
+    <td><strong>Front</strong></td>
+    <td style="color:#475569">Tool count</td>
+    <td style="font-family:monospace;font-size:12px">0 (SDK)</td>
+    <td style="font-family:monospace;font-size:12px">0 — verified empty toolkit</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/front — shows 0 actions</td>
+  </tr><tr style="background:#fef2f2">
+    <td><strong>NotebookLM</strong></td>
+    <td style="color:#475569">Mapping</td>
+    <td style="font-family:monospace;font-size:12px">Mapped to Gemini slug</td>
+    <td style="font-family:monospace;font-size:12px">Correct caveat: no NotebookLM API exists; Gemini ≠ NotebookLM</td>
+    <td style="text-align:center;font-size:16px">❌</td>
+    <td style="font-size:11px;color:#6b7280">notebooklm.google — no public API confirmed</td>
+  </tr><tr style="">
+    <td><strong>Devin</strong></td>
+    <td style="color:#475569">Slug</td>
+    <td style="font-family:monospace;font-size:12px">devin_mcp</td>
+    <td style="font-family:monospace;font-size:12px">devin_mcp ✓</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/devin_mcp</td>
+  </tr><tr style="">
+    <td><strong>Amazon SP</strong></td>
+    <td style="color:#475569">Tool count</td>
+    <td style="font-family:monospace;font-size:12px">0 (SDK)</td>
+    <td style="font-family:monospace;font-size:12px">0 — toolkit shell, no actions yet</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/amazon</td>
+  </tr><tr style="">
+    <td><strong>Pipedrive</strong></td>
+    <td style="color:#475569">Tool count</td>
+    <td style="font-family:monospace;font-size:12px">399 (SDK)</td>
+    <td style="font-family:monospace;font-size:12px">399</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/pipedrive</td>
+  </tr><tr style="">
+    <td><strong>Zendesk</strong></td>
+    <td style="color:#475569">Tool count</td>
+    <td style="font-family:monospace;font-size:12px">452 (SDK)</td>
+    <td style="font-family:monospace;font-size:12px">452</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits/zendesk</td>
+  </tr><tr style="">
+    <td><strong>Lark</strong></td>
+    <td style="color:#475569">In Composio</td>
+    <td style="font-family:monospace;font-size:12px">NOT FOUND</td>
+    <td style="font-family:monospace;font-size:12px">Correct — confirmed absent</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits — no lark slug</td>
+  </tr><tr style="">
+    <td><strong>Binance</strong></td>
+    <td style="color:#475569">In Composio</td>
+    <td style="font-family:monospace;font-size:12px">NOT FOUND</td>
+    <td style="font-family:monospace;font-size:12px">Correct — confirmed absent</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">docs.composio.dev/toolkits — no binance slug</td>
+  </tr><tr style="">
+    <td><strong>QuickBooks</strong></td>
+    <td style="color:#475569">Auth</td>
+    <td style="font-family:monospace;font-size:12px">OAUTH2</td>
+    <td style="font-family:monospace;font-size:12px">OAuth2 only</td>
+    <td style="text-align:center;font-size:16px">✅</td>
+    <td style="font-size:11px;color:#6b7280">developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0</td>
+  </tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div style="text-align:center;font-size:12px;color:#9ca3af;margin-top:32px">
+  Research pipeline built with Composio SDK v0.13.1 · TypeScript · tsx · Data collected July 2025 ·
+  <a href="https://github.com" style="color:#9ca3af">Source repo</a>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

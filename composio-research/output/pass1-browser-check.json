@@ -1,0 +1,439 @@
+{
+  "checks": [
+    {
+      "app": "Salesforce",
+      "slug": "salesforce",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/salesforce"
+    },
+    {
+      "app": "HubSpot",
+      "slug": "hubspot",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/hubspot"
+    },
+    {
+      "app": "Pipedrive",
+      "slug": "pipedrive",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/pipedrive"
+    },
+    {
+      "app": "Attio",
+      "slug": "attio",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/attio"
+    },
+    {
+      "app": "Zoho CRM",
+      "slug": "zoho",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/zoho"
+    },
+    {
+      "app": "Close",
+      "slug": "close",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/close"
+    },
+    {
+      "app": "Zendesk",
+      "slug": "zendesk",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/zendesk"
+    },
+    {
+      "app": "Intercom",
+      "slug": "intercom",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/intercom"
+    },
+    {
+      "app": "Freshdesk",
+      "slug": "freshdesk",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/freshdesk"
+    },
+    {
+      "app": "Front",
+      "slug": "front",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/front"
+    },
+    {
+      "app": "Plain",
+      "slug": "plain",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/plain"
+    },
+    {
+      "app": "Help Scout",
+      "slug": "help_scout",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/help_scout"
+    },
+    {
+      "app": "Gorgias",
+      "slug": "gorgias",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/gorgias"
+    },
+    {
+      "app": "Slack",
+      "slug": "slack",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/slack"
+    },
+    {
+      "app": "Discord",
+      "slug": "discord",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/discord"
+    },
+    {
+      "app": "Telegram",
+      "slug": "telegram",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/telegram"
+    },
+    {
+      "app": "WhatsApp Business",
+      "slug": "whatsapp",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/whatsapp"
+    },
+    {
+      "app": "Google Ads",
+      "slug": "googleads",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/googleads"
+    },
+    {
+      "app": "Meta Ads",
+      "slug": "metaads",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/metaads"
+    },
+    {
+      "app": "LinkedIn Ads",
+      "slug": "linkedin",
+      "status": "suspicious",
+      "reason": "App name \"LinkedIn Ads\" not found in page content",
+      "pageUrl": "https://docs.composio.dev/apps/linkedin"
+    },
+    {
+      "app": "GoHighLevel",
+      "slug": "highlevel",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/highlevel"
+    },
+    {
+      "app": "Mailchimp",
+      "slug": "mailchimp",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/mailchimp"
+    },
+    {
+      "app": "Klaviyo",
+      "slug": "klaviyo",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/klaviyo"
+    },
+    {
+      "app": "SendGrid",
+      "slug": "sendgrid",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/sendgrid"
+    },
+    {
+      "app": "Shopify",
+      "slug": "shopify",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/shopify"
+    },
+    {
+      "app": "Gumroad",
+      "slug": "gumroad",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/gumroad"
+    },
+    {
+      "app": "Amazon Selling Partner",
+      "slug": "amazon",
+      "status": "suspicious",
+      "reason": "App name \"Amazon Selling Partner\" not found in page content",
+      "pageUrl": "https://docs.composio.dev/apps/amazon"
+    },
+    {
+      "app": "DataForSEO",
+      "slug": "dataforseo",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/dataforseo"
+    },
+    {
+      "app": "Ahrefs",
+      "slug": "ahrefs",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/ahrefs"
+    },
+    {
+      "app": "Apify",
+      "slug": "apify",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/apify"
+    },
+    {
+      "app": "Firecrawl",
+      "slug": "firecrawl",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/firecrawl"
+    },
+    {
+      "app": "Bright Data",
+      "slug": "brightdata",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/brightdata"
+    },
+    {
+      "app": "GitHub",
+      "slug": "github",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/github"
+    },
+    {
+      "app": "Vercel",
+      "slug": "vercel",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/vercel"
+    },
+    {
+      "app": "Cloudflare",
+      "slug": "cloudflare",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/cloudflare"
+    },
+    {
+      "app": "Supabase",
+      "slug": "supabase",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/supabase"
+    },
+    {
+      "app": "Neo4j",
+      "slug": "neo4j",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/neo4j"
+    },
+    {
+      "app": "Snowflake",
+      "slug": "snowflake",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/snowflake"
+    },
+    {
+      "app": "Datadog",
+      "slug": "datadog",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/datadog"
+    },
+    {
+      "app": "Sentry",
+      "slug": "sentry",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/sentry"
+    },
+    {
+      "app": "Notion",
+      "slug": "notion",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/notion"
+    },
+    {
+      "app": "Airtable",
+      "slug": "airtable",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/airtable"
+    },
+    {
+      "app": "Linear",
+      "slug": "linear",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/linear"
+    },
+    {
+      "app": "Jira",
+      "slug": "jira",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/jira"
+    },
+    {
+      "app": "Asana",
+      "slug": "asana",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/asana"
+    },
+    {
+      "app": "Monday.com",
+      "slug": "monday",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/monday"
+    },
+    {
+      "app": "ClickUp",
+      "slug": "clickup",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/clickup"
+    },
+    {
+      "app": "Coda",
+      "slug": "coda",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/coda"
+    },
+    {
+      "app": "Harvest",
+      "slug": "harvest",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/harvest"
+    },
+    {
+      "app": "Stripe",
+      "slug": "stripe",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/stripe"
+    },
+    {
+      "app": "QuickBooks",
+      "slug": "quickbooks",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/quickbooks"
+    },
+    {
+      "app": "Xero",
+      "slug": "xero",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/xero"
+    },
+    {
+      "app": "Brex",
+      "slug": "brex",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/brex"
+    },
+    {
+      "app": "Ramp",
+      "slug": "ramp",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/ramp"
+    },
+    {
+      "app": "NotebookLM",
+      "slug": "gemini",
+      "status": "suspicious",
+      "reason": "App name \"NotebookLM\" not found in page content",
+      "pageUrl": "https://docs.composio.dev/apps/gemini"
+    },
+    {
+      "app": "Fathom",
+      "slug": "fathom",
+      "status": "confirmed",
+      "reason": "App name found in docs page",
+      "pageUrl": "https://docs.composio.dev/apps/fathom"
+    },
+    {
+      "app": "Devin",
+      "slug": "devin_mcp",
+      "status": "unreachable",
+      "reason": "HTTP 404",
+      "pageUrl": "https://docs.composio.dev/apps/devin_mcp"
+    },
+    {
+      "app": "YouTube Transcript",
+      "slug": "youtube",
+      "status": "suspicious",
+      "reason": "App name \"YouTube Transcript\" not found in page content",
+      "pageUrl": "https://docs.composio.dev/apps/youtube"
+    }
+  ],
+  "summary": {
+    "total": 58,
+    "confirmed": 53,
+    "suspicious": 4,
+    "unreachable": 1,
+    "confirmedPct": 91,
+    "suspiciousApps": [
+      {
+        "app": "LinkedIn Ads",
+        "slug": "linkedin",
+        "reason": "App name \"LinkedIn Ads\" not found in page content"
+      },
+      {
+        "app": "Amazon Selling Partner",
+        "slug": "amazon",
+        "reason": "App name \"Amazon Selling Partner\" not found in page content"
+      },
+      {
+        "app": "NotebookLM",
+        "slug": "gemini",
+        "reason": "App name \"NotebookLM\" not found in page content"
+      },
+      {
+        "app": "YouTube Transcript",
+        "slug": "youtube",
+        "reason": "App name \"YouTube Transcript\" not found in page content"
+      }
+    ]
+  }
+}

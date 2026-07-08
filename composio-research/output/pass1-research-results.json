@@ -1,0 +1,2045 @@
+[
+  {
+    "id": 1,
+    "appName": "Salesforce",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "salesforce"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "salesforce",
+    "composioName": "Salesforce",
+    "composioCategories": [
+      "CRM",
+      "Contact Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 184,
+    "triggerCount": 7,
+    "description": "Salesforce is a leading CRM platform integrating sales, service, marketing, and analytics to build customer relationships and drive business growth",
+    "baseUrl": "https://login.salesforce.com/services/data/v67.0",
+    "verdict": "Buildable today — 184 tools, 7 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/salesforce"
+  },
+  {
+    "id": 2,
+    "appName": "HubSpot",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "hubspot"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "hubspot",
+    "composioName": "HubSpot",
+    "composioCategories": [
+      "CRM",
+      "Marketing Automation"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 244,
+    "triggerCount": 2,
+    "description": "HubSpot is an inbound marketing, sales, and customer service platform integrating CRM, email automation, and analytics to facilitate lead nurturing and seamless customer experiences",
+    "baseUrl": "https://api.hubapi.com",
+    "verdict": "Buildable today — 244 tools, 2 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/hubspot"
+  },
+  {
+    "id": 3,
+    "appName": "Pipedrive",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "pipedrive"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "pipedrive",
+    "composioName": "Pipedrive",
+    "composioCategories": [
+      "CRM",
+      "Sales & CRM"
+    ],
+    "authSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "toolCount": 399,
+    "triggerCount": 3,
+    "description": "Pipedrive is a sales management tool built around pipeline visualization, lead tracking, activity reminders, and automation to keep deals progressing",
+    "baseUrl": "https://{{subdomain}}.pipedrive.com/v1",
+    "verdict": "Buildable today — 399 tools, 3 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/pipedrive"
+  },
+  {
+    "id": 4,
+    "appName": "Attio",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "attio"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "attio",
+    "composioName": "Attio",
+    "composioCategories": [
+      "CRM"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 99,
+    "triggerCount": 0,
+    "description": "Attio is a fully customizable workspace for your team's relationships and workflows.",
+    "baseUrl": "https://api.attio.com/v2",
+    "verdict": "Buildable today — 99 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/attio"
+  },
+  {
+    "id": 5,
+    "appName": "Twenty",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "twenty",
+      "twentycrm"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 6,
+    "appName": "Podio",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "podio"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 7,
+    "appName": "Zoho CRM",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "zohocrm",
+      "zoho_crm",
+      "zoho"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "zoho",
+    "composioName": "Zoho",
+    "composioCategories": [
+      "CRM",
+      "Marketing Automation"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 57,
+    "triggerCount": 0,
+    "description": "Zoho is a suite of cloud applications including CRM, email marketing, and collaboration tools, enabling businesses to automate and scale operations",
+    "baseUrl": "https://www.zohoapis.{{base_url_region}}",
+    "verdict": "Buildable today — 57 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/zoho"
+  },
+  {
+    "id": 8,
+    "appName": "Close",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "close"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "close",
+    "composioName": "Close",
+    "composioCategories": [
+      "CRM",
+      "Drip Emails"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 6,
+    "triggerCount": 0,
+    "description": "Close is a CRM platform designed to help businesses manage and streamline their sales processes, including calling, email automation, and predictive dialers.",
+    "baseUrl": "https://api.close.com/api/v1",
+    "verdict": "Buildable today — 6 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/close"
+  },
+  {
+    "id": 9,
+    "appName": "Copper",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "copper"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 10,
+    "appName": "DealCloud",
+    "categoryGiven": "CRM and Sales",
+    "slugsTried": [
+      "dealcloud",
+      "intapp"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 11,
+    "appName": "Zendesk",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "zendesk"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "zendesk",
+    "composioName": "Zendesk",
+    "composioCategories": [
+      "CRM",
+      "Customer Support"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 452,
+    "triggerCount": 2,
+    "description": "Zendesk provides customer support software with ticketing, live chat, and knowledge base features, enabling efficient helpdesk operations and customer engagement",
+    "baseUrl": "https://{{subdomain}}.zendesk.com",
+    "verdict": "Buildable today — 452 tools, 2 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/zendesk"
+  },
+  {
+    "id": 12,
+    "appName": "Intercom",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "intercom"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "intercom",
+    "composioName": "Intercom",
+    "composioCategories": [
+      "Customer Support",
+      "CRM"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 133,
+    "triggerCount": 0,
+    "description": "Intercom provides live chat, messaging, and customer engagement tools, enabling businesses to drive conversions, handle support, and personalize communication at scale",
+    "baseUrl": "https://api.intercom.io",
+    "verdict": "Buildable today — 133 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/intercom"
+  },
+  {
+    "id": 13,
+    "appName": "Freshdesk",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "freshdesk"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "freshdesk",
+    "composioName": "Freshdesk",
+    "composioCategories": [
+      "CRM",
+      "Customer Support"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 178,
+    "triggerCount": 0,
+    "description": "Freshdesk provides customer support software with ticketing, knowledge base, and automation features for efficient helpdesk operations and better customer experiences",
+    "baseUrl": "https://{{subdomain}}.freshdesk.com/api/v2",
+    "verdict": "Buildable today — 178 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/freshdesk"
+  },
+  {
+    "id": 14,
+    "appName": "Front",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "front"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "front",
+    "composioName": "Front",
+    "composioCategories": [
+      "CRM",
+      "Sales & Customer Support"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 0,
+    "triggerCount": 0,
+    "description": "Front is a shared inbox and collaboration platform that centralizes customer communications from multiple channels, enabling teams to manage emails, chats, and more",
+    "baseUrl": "https://api2.frontapp.com",
+    "verdict": "Toolkit exists but 0 tools listed",
+    "blocker": "0 tools exposed in Composio toolkit",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/front"
+  },
+  {
+    "id": 15,
+    "appName": "Pylon",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "pylon"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 16,
+    "appName": "LiveAgent",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "liveagent",
+      "live_agent"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 17,
+    "appName": "Plain",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "plain"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "plain",
+    "composioName": "Plain",
+    "composioCategories": [
+      "Customer Support"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 22,
+    "triggerCount": 0,
+    "description": "Plain is a collaborative support platform for B2B support teams, offering a modern, AI-powered interface to consolidate support channels and assist customers efficiently.",
+    "baseUrl": "https://core-api.uk.plain.com/graphql/v1",
+    "verdict": "Buildable today — 22 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/plain"
+  },
+  {
+    "id": 18,
+    "appName": "Help Scout",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "helpscout",
+      "help_scout"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "help_scout",
+    "composioName": "Help Scout",
+    "composioCategories": [
+      "Customer Support",
+      "Communication"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 129,
+    "triggerCount": 0,
+    "description": "Help Scout provides customer support software with shared inbox, knowledge base, and customer management tools",
+    "baseUrl": "https://api.helpscout.net/v2",
+    "verdict": "Buildable today — 129 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/help_scout"
+  },
+  {
+    "id": 19,
+    "appName": "Gorgias",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "gorgias"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "gorgias",
+    "composioName": "Gorgias",
+    "composioCategories": [
+      "CRM",
+      "Customer Support"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 32,
+    "triggerCount": 0,
+    "description": "Gorgias is a helpdesk and live chat platform specializing in e-commerce, offering automated support, order management, and unified customer communication",
+    "baseUrl": "https://{{subdomain}}.gorgias.com",
+    "verdict": "Buildable today — 32 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/gorgias"
+  },
+  {
+    "id": 20,
+    "appName": "Gladly",
+    "categoryGiven": "Support and Helpdesk",
+    "slugsTried": [
+      "gladly"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 21,
+    "appName": "Slack",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "slack"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "slack",
+    "composioName": "Slack",
+    "composioCategories": [
+      "Team Chat",
+      "Team Collaboration"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 158,
+    "triggerCount": 9,
+    "description": "Slack is a channel-based messaging platform. With Slack, people can work together more effectively, connect all their software tools and services, and find the information they need to do their best work - all within a secure, enterprise-grade environment.",
+    "baseUrl": "https://slack.com/api",
+    "verdict": "Buildable today — 158 tools, 9 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/slack"
+  },
+  {
+    "id": 22,
+    "appName": "Twilio",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "twilio"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 23,
+    "appName": "Zoho Cliq",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "zohocliq",
+      "zoho_cliq",
+      "zoho-cliq"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 24,
+    "appName": "Lark (Larksuite)",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "lark",
+      "larksuite",
+      "lark-suite"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 25,
+    "appName": "Pumble",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "pumble"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 26,
+    "appName": "Discord",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "discord"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "discord",
+    "composioName": "Discord",
+    "composioCategories": [
+      "Team Chat",
+      "Team Collaboration"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 27,
+    "triggerCount": 1,
+    "description": "An instant messaging and VoIP social platform.",
+    "baseUrl": "https://discord.com/api/v10",
+    "verdict": "Buildable today — 27 tools, 1 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/discord"
+  },
+  {
+    "id": 27,
+    "appName": "Telegram",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "telegram"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "telegram",
+    "composioName": "Telegram",
+    "composioCategories": [
+      "Team Chat",
+      "Notifications"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 18,
+    "triggerCount": 0,
+    "description": "Telegram is a cloud-based messaging app with a focus on security and speed. Build bots to send messages, manage chats, and interact with users.",
+    "baseUrl": "https://api.telegram.org",
+    "verdict": "Buildable today — 18 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/telegram"
+  },
+  {
+    "id": 28,
+    "appName": "WhatsApp Business",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "whatsappbusiness",
+      "whatsapp"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "whatsapp",
+    "composioName": "WhatsApp",
+    "composioCategories": [
+      "Phone & SMS",
+      "Communication"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 57,
+    "triggerCount": 1,
+    "description": "Enables interaction with customers through the WhatsApp Business API for messaging and automation. Only supports WhatsApp Business accounts, not WhatsApp Personal accounts.",
+    "baseUrl": "https://graph.facebook.com/v22.0",
+    "verdict": "Buildable today — 57 tools, 1 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/whatsapp"
+  },
+  {
+    "id": 29,
+    "appName": "Aircall",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "aircall"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 30,
+    "appName": "Vonage",
+    "categoryGiven": "Communications and Messaging",
+    "slugsTried": [
+      "vonage"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 31,
+    "appName": "Google Ads",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "googleads"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "googleads",
+    "composioName": "Google Ads",
+    "composioCategories": [
+      "Ads & Conversion"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 22,
+    "triggerCount": 0,
+    "description": "Google Ads, is an online advertising platform developed by Google, where advertisers bid to display brief advertisements, service offerings, product listings, and videos to web users.",
+    "baseUrl": "https://googleads.googleapis.com",
+    "verdict": "Buildable today — 22 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/googleads"
+  },
+  {
+    "id": 32,
+    "appName": "Meta Ads",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "metaads"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "metaads",
+    "composioName": "Meta Ads",
+    "composioCategories": [
+      "Ads & Conversion",
+      "Social Media Marketing"
+    ],
+    "authSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "toolCount": 50,
+    "triggerCount": 0,
+    "description": "Create, edit and get insights from ads across Meta technologies, including Facebook, Instagram, Messenger, WhatsApp and more.",
+    "baseUrl": "https://graph.facebook.com/v24.0",
+    "verdict": "Buildable today — 50 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/metaads"
+  },
+  {
+    "id": 33,
+    "appName": "LinkedIn Ads",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "linkedinads",
+      "linkedin"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "linkedin",
+    "composioName": "LinkedIn",
+    "composioCategories": [
+      "Social Media Accounts",
+      "Marketing Automation"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 22,
+    "triggerCount": 0,
+    "description": "LinkedIn is a professional networking platform enabling job seekers, companies, and thought leaders to connect, share content, and discover business opportunities",
+    "baseUrl": "https://api.linkedin.com",
+    "verdict": "Buildable today — 22 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/linkedin"
+  },
+  {
+    "id": 34,
+    "appName": "GoHighLevel",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "gohighlevel",
+      "highlevel"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "highlevel",
+    "composioName": "Highlevel",
+    "composioCategories": [
+      "Marketing Automation",
+      "CRM"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 218,
+    "triggerCount": 0,
+    "description": "HighLevel provides a marketing automation and CRM platform for agencies, featuring funnels, appointment scheduling, two-way texting, and other tools to drive client success",
+    "baseUrl": "https://services.leadconnectorhq.com",
+    "verdict": "Buildable today — 218 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/highlevel"
+  },
+  {
+    "id": 35,
+    "appName": "Mailchimp",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "mailchimp"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "mailchimp",
+    "composioName": "Mailchimp",
+    "composioCategories": [
+      "Email Newsletters",
+      "Marketing Automation"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 272,
+    "triggerCount": 4,
+    "description": "Mailchimp is an email marketing and automation platform providing campaign templates, audience segmentation, and performance analytics to drive engagement and conversions",
+    "baseUrl": "https://us21.api.mailchimp.com/3.0",
+    "verdict": "Buildable today — 272 tools, 4 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/mailchimp"
+  },
+  {
+    "id": 36,
+    "appName": "Klaviyo",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "klaviyo"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "klaviyo",
+    "composioName": "Klaviyo",
+    "composioCategories": [
+      "Marketing Automation",
+      "Email Newsletters"
+    ],
+    "authSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "toolCount": 225,
+    "triggerCount": 0,
+    "description": "Klaviyo is a data-driven email and SMS marketing platform that allows e-commerce brands to deliver targeted messages, track conversions, and scale customer relationships",
+    "baseUrl": "https://a.klaviyo.com",
+    "verdict": "Buildable today — 225 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/klaviyo"
+  },
+  {
+    "id": 37,
+    "appName": "systeme.io",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "systemeio",
+      "systeme"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 38,
+    "appName": "Pinterest",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "pinterest"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 39,
+    "appName": "Threads (Meta)",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "threads",
+      "threads_meta"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 40,
+    "appName": "SendGrid",
+    "categoryGiven": "Marketing, Ads, Email and Social",
+    "slugsTried": [
+      "sendgrid"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "sendgrid",
+    "composioName": "SendGrid",
+    "composioCategories": [
+      "Transactional Email",
+      "Email Newsletters"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 359,
+    "triggerCount": 0,
+    "description": "SendGrid is a cloud-based email delivery platform providing transactional and marketing email services, with APIs for integration, analytics, and scalability",
+    "baseUrl": "https://api.sendgrid.com",
+    "verdict": "Buildable today — 359 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/sendgrid"
+  },
+  {
+    "id": 41,
+    "appName": "Shopify",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "shopify"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "shopify",
+    "composioName": "Shopify",
+    "composioCategories": [
+      "eCommerce"
+    ],
+    "authSchemes": [
+      "OAUTH2",
+      "API_KEY",
+      "S2S_OAUTH2"
+    ],
+    "toolCount": 315,
+    "triggerCount": 0,
+    "description": "Shopify is an e-commerce platform. This toolkit is GraphQL-first for new Admin API automations while retaining legacy REST compatibility actions for older workflows and numeric-ID interoperability",
+    "baseUrl": "https://{{subdomain}}.myshopify.com/admin/api/2026-04",
+    "verdict": "Buildable today — 315 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/shopify"
+  },
+  {
+    "id": 42,
+    "appName": "WooCommerce",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "woocommerce",
+      "woo_commerce"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 43,
+    "appName": "BigCommerce",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "bigcommerce",
+      "big_commerce"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 44,
+    "appName": "Salesforce Commerce Cloud",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "salesforcecommercecloud",
+      "sfcc",
+      "salesforce_commerce"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 45,
+    "appName": "Magento (Adobe Commerce)",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "magento",
+      "adobe_commerce",
+      "adobecommerce"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 46,
+    "appName": "Squarespace",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "squarespace",
+      "square_space"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 47,
+    "appName": "Ecwid",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "ecwid"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 48,
+    "appName": "Gumroad",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "gumroad"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "gumroad",
+    "composioName": "Gumroad",
+    "composioCategories": [
+      "eCommerce"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 7,
+    "triggerCount": 0,
+    "description": "Gumroad simplifies selling digital goods, physical products, and memberships by offering a streamlined checkout, marketing tools, and direct payout options",
+    "baseUrl": "https://api.gumroad.com",
+    "verdict": "Buildable today — 7 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/gumroad"
+  },
+  {
+    "id": 49,
+    "appName": "Amazon Selling Partner",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "amazonsellingpartner",
+      "amazon"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "amazon",
+    "composioName": "Amazon",
+    "composioCategories": [
+      "E-commerce"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 0,
+    "triggerCount": 0,
+    "description": "Amazon is an e-commerce giant delivering a massive online marketplace, cloud services, and digital products that connect retailers, consumers, and businesses worldwide for seamless transactions",
+    "baseUrl": "https://api.amazon.com",
+    "verdict": "Toolkit exists but 0 tools listed",
+    "blocker": "0 tools exposed in Composio toolkit",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/amazon"
+  },
+  {
+    "id": 50,
+    "appName": "fanbasis",
+    "categoryGiven": "Ecommerce",
+    "slugsTried": [
+      "fanbasis",
+      "fan_basis"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 51,
+    "appName": "DataForSEO",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "dataforseo"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "dataforseo",
+    "composioName": "Dataforseo",
+    "composioCategories": [
+      "Developer Tools",
+      "Marketing"
+    ],
+    "authSchemes": [
+      "BASIC"
+    ],
+    "toolCount": 312,
+    "triggerCount": 0,
+    "description": "SEO data and analytics platform providing SERP data, backlinks, keywords, and competitive intelligence",
+    "baseUrl": "https://api.dataforseo.com/v3",
+    "verdict": "Buildable today — 312 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/dataforseo"
+  },
+  {
+    "id": 52,
+    "appName": "SE Ranking",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "seranking",
+      "se_ranking"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 53,
+    "appName": "Ahrefs",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "ahrefs"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "ahrefs",
+    "composioName": "Ahrefs",
+    "composioCategories": [
+      "Marketing Automation",
+      "Analytics"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 40,
+    "triggerCount": 0,
+    "description": "Ahrefs is an SEO and marketing platform offering site audits, keyword research, content analysis, and competitive insights to improve search rankings and drive organic traffic",
+    "baseUrl": "https://api.ahrefs.com/v3",
+    "verdict": "Buildable today — 40 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/ahrefs"
+  },
+  {
+    "id": 54,
+    "appName": "MrScraper",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "mrscraper",
+      "mr_scraper"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 55,
+    "appName": "Apify",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "apify"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "apify",
+    "composioName": "Apify",
+    "composioCategories": [
+      "AI Web Scraping",
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 112,
+    "triggerCount": 0,
+    "description": "Apify is a platform for building, deploying, and managing web scraping and automation tools, known as Actors.",
+    "baseUrl": "https://api.apify.com/v2",
+    "verdict": "Buildable today — 112 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/apify"
+  },
+  {
+    "id": 56,
+    "appName": "Firecrawl",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "firecrawl"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "firecrawl",
+    "composioName": "Firecrawl",
+    "composioCategories": [
+      "AI Web Scraping",
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 29,
+    "triggerCount": 0,
+    "description": "Firecrawl automates web crawling and data extraction, enabling organizations to gather content, index sites, and gain insights from online sources at scale",
+    "baseUrl": "https://api.firecrawl.dev/v1",
+    "verdict": "Buildable today — 29 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/firecrawl"
+  },
+  {
+    "id": 57,
+    "appName": "Bright Data",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "brightdata"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "brightdata",
+    "composioName": "Bright Data",
+    "composioCategories": [
+      "AI Web Scraping",
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 10,
+    "triggerCount": 0,
+    "description": "Bright Data provides the world's #1 web data platform with Web Unlocker for bypassing anti-bot systems, SERP API for search engine data, and pre-made scrapers for popular websites. Collect any web data at scale.",
+    "baseUrl": "https://api.brightdata.com",
+    "verdict": "Buildable today — 10 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/brightdata"
+  },
+  {
+    "id": 58,
+    "appName": "Sherlock",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "sherlock"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 59,
+    "appName": "Waterfall.io",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "waterfallio",
+      "waterfall",
+      "waterfalldata"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 60,
+    "appName": "Clay",
+    "categoryGiven": "Data, SEO and Scraping",
+    "slugsTried": [
+      "clay",
+      "clayhq"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 61,
+    "appName": "GitHub",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "github"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "github",
+    "composioName": "GitHub",
+    "composioCategories": [
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 871,
+    "triggerCount": 46,
+    "description": "GitHub is a code hosting platform for version control and collaboration, offering Git-based repository management, issue tracking, and continuous integration features",
+    "baseUrl": "https://api.github.com",
+    "verdict": "Buildable today — 871 tools, 46 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/github"
+  },
+  {
+    "id": 62,
+    "appName": "Vercel",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "vercel"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "vercel",
+    "composioName": "Vercel",
+    "composioCategories": [
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 131,
+    "triggerCount": 0,
+    "description": "Vercel is a platform for frontend frameworks and static sites, enabling developers to host websites and web services that deploy instantly, scale automatically, and require minimal configuration.",
+    "baseUrl": "https://api.vercel.com",
+    "verdict": "Buildable today — 131 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/vercel"
+  },
+  {
+    "id": 63,
+    "appName": "Netlify",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "netlify"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 64,
+    "appName": "Cloudflare",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "cloudflare"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "cloudflare",
+    "composioName": "Cloudflare",
+    "composioCategories": [
+      "Security & Identity Tools",
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 20,
+    "triggerCount": 0,
+    "description": "Cloudflare is a global network designed to make everything you connect to the Internet secure, private, fast, and reliable.",
+    "baseUrl": "https://api.cloudflare.com/client/v4",
+    "verdict": "Buildable today — 20 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/cloudflare"
+  },
+  {
+    "id": 65,
+    "appName": "Supabase",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "supabase"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "supabase",
+    "composioName": "Supabase",
+    "composioCategories": [
+      "Developer Tools",
+      "Databases"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 124,
+    "triggerCount": 0,
+    "description": "Supabase is an open-source backend-as-a-service providing a Postgres database, authentication, storage, and real-time subscription APIs for building modern applications",
+    "baseUrl": "https://api.supabase.com",
+    "verdict": "Buildable today — 124 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/supabase"
+  },
+  {
+    "id": 66,
+    "appName": "Neo4j",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "neo4j"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "neo4j",
+    "composioName": "Neo4J",
+    "composioCategories": [
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "OAUTH2",
+      "API_KEY",
+      "S2S_OAUTH2"
+    ],
+    "toolCount": 21,
+    "triggerCount": 0,
+    "description": "Graph database platform for connected data and real-time analytics",
+    "baseUrl": "https://api.neo4j.io/v1",
+    "verdict": "Buildable today — 21 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/neo4j"
+  },
+  {
+    "id": 67,
+    "appName": "Snowflake",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "snowflake"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "snowflake",
+    "composioName": "Snowflake",
+    "composioCategories": [
+      "Databases",
+      "Analytics"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 16,
+    "triggerCount": 0,
+    "description": "Snowflake is a cloud-based data warehouse offering elastic scaling, secure data sharing, and SQL analytics across multiple cloud environments",
+    "baseUrl": "https://{{subdomain}}.snowflakecomputing.com/api/v2",
+    "verdict": "Buildable today — 16 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/snowflake"
+  },
+  {
+    "id": 68,
+    "appName": "MongoDB Atlas",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "mongodbatlas",
+      "mongodb",
+      "mongo"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 69,
+    "appName": "Datadog",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "datadog"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "datadog",
+    "composioName": "Datadog",
+    "composioCategories": [
+      "Server Monitoring",
+      "Developer Tools"
+    ],
+    "authSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "toolCount": 42,
+    "triggerCount": 0,
+    "description": "Datadog offers monitoring, observability, and security for cloud-scale applications, unifying metrics, logs, and traces to help teams detect issues and optimize performance",
+    "baseUrl": "https://api.{{base_url_region}}",
+    "verdict": "Buildable today — 42 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/datadog"
+  },
+  {
+    "id": 70,
+    "appName": "Sentry",
+    "categoryGiven": "Developer, Infra and Data platforms",
+    "slugsTried": [
+      "sentry"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "sentry",
+    "composioName": "Sentry",
+    "composioCategories": [
+      "Developer Tools",
+      "Server Monitoring"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 209,
+    "triggerCount": 0,
+    "description": "Integrate Sentry to manage your error tracking and monitoring.",
+    "baseUrl": "https://sentry.io",
+    "verdict": "Buildable today — 209 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/sentry"
+  },
+  {
+    "id": 71,
+    "appName": "Notion",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "notion"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "notion",
+    "composioName": "Notion",
+    "composioCategories": [
+      "Notes",
+      "Documents",
+      "Project Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 45,
+    "triggerCount": 8,
+    "description": "Notion centralizes notes, docs, wikis, and tasks in a unified workspace, letting teams build custom workflows for collaboration and knowledge management",
+    "baseUrl": "https://api.notion.com",
+    "verdict": "Buildable today — 45 tools, 8 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/notion"
+  },
+  {
+    "id": 72,
+    "appName": "Airtable",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "airtable"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "airtable",
+    "composioName": "Airtable",
+    "composioCategories": [
+      "Productivity",
+      "Spreadsheets",
+      "Databases"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 24,
+    "triggerCount": 6,
+    "description": "Airtable merges spreadsheet functionality with database power, enabling teams to organize projects, track tasks, and collaborate through customizable views, automation, and integrations for data management",
+    "baseUrl": "https://api.airtable.com/v0",
+    "verdict": "Buildable today — 24 tools, 6 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/airtable"
+  },
+  {
+    "id": 73,
+    "appName": "Linear",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "linear"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "linear",
+    "composioName": "Linear",
+    "composioCategories": [
+      "Project Management",
+      "Task Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 46,
+    "triggerCount": 12,
+    "description": "Linear is a streamlined issue tracking and project planning tool for modern teams, featuring fast workflows, keyboard shortcuts, and GitHub integrations",
+    "baseUrl": "https://api.linear.app",
+    "verdict": "Buildable today — 46 tools, 12 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/linear"
+  },
+  {
+    "id": 74,
+    "appName": "Jira",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "jira"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "jira",
+    "composioName": "Jira",
+    "composioCategories": [
+      "Project Management",
+      "Task Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 97,
+    "triggerCount": 3,
+    "description": "A tool for bug tracking, issue tracking, and agile project management.",
+    "baseUrl": "https://{{subdomain}}.atlassian.net",
+    "verdict": "Buildable today — 97 tools, 3 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/jira"
+  },
+  {
+    "id": 75,
+    "appName": "Asana",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "asana"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "asana",
+    "composioName": "Asana",
+    "composioCategories": [
+      "Project Management",
+      "Task Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 153,
+    "triggerCount": 6,
+    "description": "Tool to help teams organize, track, and manage their work.",
+    "baseUrl": "https://app.asana.com/api/1.0",
+    "verdict": "Buildable today — 153 tools, 6 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/asana"
+  },
+  {
+    "id": 76,
+    "appName": "Monday.com",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "mondaycom",
+      "monday"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "monday",
+    "composioName": "Monday",
+    "composioCategories": [
+      "Project Management",
+      "Task Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 121,
+    "triggerCount": 0,
+    "description": "monday.com is a customizable work management platform for project planning, collaboration, and automation, supporting agile, sales, marketing, and more",
+    "baseUrl": "https://api.monday.com",
+    "verdict": "Buildable today — 121 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/monday"
+  },
+  {
+    "id": 77,
+    "appName": "ClickUp",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "clickup"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "clickup",
+    "composioName": "ClickUp",
+    "composioCategories": [
+      "Productivity",
+      "Project Management",
+      "Task Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 162,
+    "triggerCount": 21,
+    "description": "ClickUp unifies tasks, docs, goals, and chat in a single platform, allowing teams to plan, organize, and collaborate across projects with customizable workflows",
+    "baseUrl": "https://api.clickup.com/api/v2",
+    "verdict": "Buildable today — 162 tools, 21 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/clickup"
+  },
+  {
+    "id": 78,
+    "appName": "Coda",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "coda"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "coda",
+    "composioName": "Coda",
+    "composioCategories": [
+      "Productivity",
+      "Project Management"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 109,
+    "triggerCount": 4,
+    "description": "Collaborative workspace platform that transforms documents into powerful tools for team productivity and project management",
+    "baseUrl": "https://coda.io/apis/v1",
+    "verdict": "Buildable today — 109 tools, 4 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/coda"
+  },
+  {
+    "id": 79,
+    "appName": "Smartsheet",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "smartsheet"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 80,
+    "appName": "Harvest",
+    "categoryGiven": "Productivity and Project Management",
+    "slugsTried": [
+      "harvest"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "harvest",
+    "composioName": "Harvest",
+    "composioCategories": [
+      "Time Tracking Software",
+      "Proposal & Invoice Management"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 57,
+    "triggerCount": 0,
+    "description": "Harvest is a time-tracking and invoicing tool designed for teams and freelancers, helping them log billable hours, manage projects, and streamline payments",
+    "baseUrl": "https://api.harvestapp.com/v2",
+    "verdict": "Buildable today — 57 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/harvest"
+  },
+  {
+    "id": 81,
+    "appName": "Stripe",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "stripe"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "stripe",
+    "composioName": "Stripe",
+    "composioCategories": [
+      "Payment Processing",
+      "eCommerce"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 425,
+    "triggerCount": 7,
+    "description": "Stripe offers online payment infrastructure, fraud prevention, and APIs enabling businesses to accept and manage payments globally",
+    "baseUrl": "https://api.stripe.com/v1",
+    "verdict": "Buildable today — 425 tools, 7 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/stripe"
+  },
+  {
+    "id": 82,
+    "appName": "Plaid",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "plaid"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 83,
+    "appName": "Binance",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "binance"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 84,
+    "appName": "Paygent Connect",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "paygentconnect",
+      "paygent",
+      "nmi"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 85,
+    "appName": "iPayX",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "ipayx"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 86,
+    "appName": "QuickBooks",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "quickbooks"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "quickbooks",
+    "composioName": "QuickBooks",
+    "composioCategories": [
+      "Accounting",
+      "Payment Processing"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 114,
+    "triggerCount": 0,
+    "description": "Quickbooks is a cloud-based accounting software that helps you manage your finances, track your income and expenses, and get insights into your business",
+    "baseUrl": "https://quickbooks.api.intuit.com",
+    "verdict": "Buildable today — 114 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/quickbooks"
+  },
+  {
+    "id": 87,
+    "appName": "Xero",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "xero"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "xero",
+    "composioName": "Xero",
+    "composioCategories": [
+      "Accounting"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 53,
+    "triggerCount": 0,
+    "description": "Xero is a cloud-based accounting software for small businesses, providing invoicing, bank reconciliation, bookkeeping, and financial reporting in real time",
+    "baseUrl": "https://api.xero.com/connections",
+    "verdict": "Buildable today — 53 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/xero"
+  },
+  {
+    "id": 88,
+    "appName": "Brex",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "brex"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "brex",
+    "composioName": "Brex",
+    "composioCategories": [
+      "Accounting"
+    ],
+    "authSchemes": [
+      "OAUTH2",
+      "API_KEY"
+    ],
+    "toolCount": 84,
+    "triggerCount": 0,
+    "description": "Brex provides corporate credit cards, spend management, and financial tools tailored for startups and tech businesses to optimize cash flow, accounting, and growth",
+    "baseUrl": "https://platform.brexapis.com",
+    "verdict": "Buildable today — 84 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/brex"
+  },
+  {
+    "id": 89,
+    "appName": "Ramp",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "ramp"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "ramp",
+    "composioName": "Ramp",
+    "composioCategories": [
+      "Accounting"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 88,
+    "triggerCount": 0,
+    "description": "Ramp is a platform that helps you manage your finances, track your income and expenses, and get insights into your business",
+    "baseUrl": "https://api.ramp.com/developer/v1",
+    "verdict": "Buildable today — 88 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/ramp"
+  },
+  {
+    "id": 90,
+    "appName": "PitchBook",
+    "categoryGiven": "Finance and Fintech",
+    "slugsTried": [
+      "pitchbook",
+      "pitch_book"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 91,
+    "appName": "NotebookLM",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "notebooklm",
+      "googlegemini",
+      "gemini"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "gemini",
+    "composioName": "Gemini",
+    "composioCategories": [
+      "Artificial Intelligence",
+      "AI Models",
+      "AI Content Generation"
+    ],
+    "authSchemes": [
+      "NO_AUTH"
+    ],
+    "toolCount": 7,
+    "triggerCount": 0,
+    "description": "Comprehensive Gemini integration supporting Veo 3 video generation, Gemini Flash text generation (Nano Banana), chat completions, and multimodal AI capabilities via the Google Gemini API.",
+    "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+    "verdict": "Buildable today — 7 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/gemini"
+  },
+  {
+    "id": 92,
+    "appName": "Otter AI",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "otterai",
+      "otter",
+      "otter_ai"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 93,
+    "appName": "Fathom",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "fathom"
+    ],
+    "matchMethod": "direct-slug",
+    "foundInComposio": true,
+    "composioSlug": "fathom",
+    "composioName": "Fathom",
+    "composioCategories": [
+      "AI Meeting Assistants",
+      "Transcription"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 7,
+    "triggerCount": 0,
+    "description": "AI meeting assistant that records, transcribes, and summarizes meetings",
+    "baseUrl": "https://fathom.video/external/v1",
+    "verdict": "Buildable today — 7 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/fathom"
+  },
+  {
+    "id": 94,
+    "appName": "Consensus",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "consensus",
+      "consensusapp"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 95,
+    "appName": "Reducto",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "reducto"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 96,
+    "appName": "Devin",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "devin",
+      "devin_mcp"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "devin_mcp",
+    "composioName": "Devin MCP",
+    "composioCategories": [
+      "Model Context Protocol",
+      "Developer Tools",
+      "AI Assistants"
+    ],
+    "authSchemes": [
+      "API_KEY"
+    ],
+    "toolCount": 4,
+    "triggerCount": 0,
+    "description": "AI-powered access to GitHub repository documentation and codebase analysis, including private repositories, via Devin.",
+    "baseUrl": "https://devin.ai",
+    "verdict": "Buildable today — 4 tools, 0 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/devin_mcp"
+  },
+  {
+    "id": 97,
+    "appName": "higgsfield",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "higgsfield"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 98,
+    "appName": "Mermaid CLI",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "mermaidcli",
+      "mermaid"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  },
+  {
+    "id": 99,
+    "appName": "YouTube Transcript",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "youtubetranscript",
+      "youtube"
+    ],
+    "matchMethod": "alias",
+    "foundInComposio": true,
+    "composioSlug": "youtube",
+    "composioName": "YouTube",
+    "composioCategories": [
+      "Video & Audio",
+      "Social Media Accounts"
+    ],
+    "authSchemes": [
+      "OAUTH2"
+    ],
+    "toolCount": 48,
+    "triggerCount": 4,
+    "description": "YouTube is a video-sharing platform with user-generated content, live streaming, and monetization opportunities, widely used for marketing, education, and entertainment",
+    "baseUrl": "https://www.googleapis.com/youtube/v3",
+    "verdict": "Buildable today — 48 tools, 4 triggers",
+    "evidenceUrl": "https://docs.composio.dev/toolkits/youtube"
+  },
+  {
+    "id": 100,
+    "appName": "Grain",
+    "categoryGiven": "AI, Research and Media-native",
+    "slugsTried": [
+      "grain"
+    ],
+    "matchMethod": "not-found",
+    "foundInComposio": false,
+    "verdict": "Not in Composio today",
+    "blocker": "No matching Composio toolkit found",
+    "evidenceUrl": "https://docs.composio.dev/toolkits"
+  }
+]

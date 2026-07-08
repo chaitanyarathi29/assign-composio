@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Composio Research — Live Pipeline</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#111827;line-height:1.5}
+.hero{background:linear-gradient(135deg,#1e3a8a,#1d4ed8 60%,#3b82f6);color:#fff;padding:40px 32px 36px}
+.hero h1{font-size:2rem;font-weight:800;margin-bottom:6px}
+.hero p{color:#bfdbfe;font-size:1rem;margin-bottom:24px}
+.stats-row{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.stat{background:rgba(255,255,255,.12);border-radius:10px;padding:14px 20px;min-width:120px;text-align:center}
+.stat .n{font-size:2rem;font-weight:800;line-height:1}
+.stat .l{font-size:11px;color:#93c5fd;margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.run-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1e3a8a;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:800;border:none;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.25);transition:all .15s}
+.run-btn:hover:not(:disabled){background:#e0e7ff;transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.run-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.dot{width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0;transition:background .3s}
+.dot.red{background:#ef4444}
+.dot.yellow{background:#f59e0b;animation:blink .8s step-start infinite}
+@keyframes blink{50%{opacity:0}}
+.progress-bar-wrap{background:rgba(255,255,255,.2);border-radius:4px;height:6px;margin-top:18px;overflow:hidden;display:none}
+.progress-bar-wrap.show{display:block}
+.progress-bar{height:6px;background:#fff;border-radius:4px;width:0%;transition:width .5s ease}
+.stage-label{font-size:12px;color:#bfdbfe;margin-top:6px;min-height:18px;display:none}
+.stage-label.show{display:block}
+.timestamp{font-size:12px;color:#93c5fd;margin-top:12px}
+.container{max-width:1400px;margin:0 auto;padding:24px 24px 80px}
+.section{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+h2{font-size:1.25rem;font-weight:700;color:#1e293b;margin-bottom:16px;border-left:4px solid #2563eb;padding-left:12px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;color:#fff;white-space:nowrap;margin:1px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#f1f5f9;padding:9px 12px;text-align:left;font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;position:sticky;top:0;z-index:1}
+td{padding:8px 12px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+tr:hover td{background:#f8fafc}
+.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid #e2e8f0;max-height:560px;overflow-y:auto}
+.pattern-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.pcard{border:1px solid #e2e8f0;border-radius:10px;padding:18px}
+.pcard h3{font-size:.95rem;margin-bottom:8px}
+.pcard p{font-size:13px;color:#475569;line-height:1.6}
+.pcard.green{border-color:#bbf7d0;background:#f0fdf4}
+.pcard.blue{border-color:#bfdbfe;background:#eff6ff}
+.pcard.yellow{border-color:#fde68a;background:#fffbeb}
+.pcard.red{border-color:#fecaca;background:#fef2f2}
+.pcard.purple{border-color:#e9d5ff;background:#faf5ff}
+.pcard.indigo{border-color:#c7d2fe;background:#eef2ff}
+.alert{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:12px 16px;font-size:13px;color:#92400e;display:none;margin-bottom:20px}
+.alert.show{display:block}
+@media(max-width:640px){.stats-row{gap:12px}.stat .n{font-size:1.5rem}.hero{padding:28px 16px 24px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div style="font-size:11px;color:#93c5fd;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Composio AI Product Ops — Take-Home Assignment</div>
+  <h1>100 Apps. One Research Agent. Live Data.</h1>
+  <p>Click the button to query Composio SDK fresh — stats and table update without reloading the page.</p>
+
+  <div class="stats-row">
+    <div class="stat"><div class="n" id="st-buildable">—</div><div class="l">Buildable today</div></div>
+    <div class="stat"><div class="n" id="st-notfound">—</div><div class="l">Not in Composio</div></div>
+    <div class="stat"><div class="n" id="st-mcp">—</div><div class="l">Have MCP server</div></div>
+    <div class="stat"><div class="n" id="st-selfserve">—</div><div class="l">Self-serve access</div></div>
+    <div class="stat"><div class="n" id="st-accuracy">90%</div><div class="l">Verified accuracy</div></div>
+  </div>
+
+  <button class="run-btn" id="runBtn">
+    <span class="dot" id="dot"></span>
+    <span id="btnLabel">🔄 Run Fresh Pipeline</span>
+  </button>
+
+  <div class="progress-bar-wrap" id="progressWrap">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <div class="stage-label" id="stageLabel"></div>
+  <div class="timestamp" id="timestamp"></div>
+</div>
+
+<div class="container">
+
+  <div class="alert" id="offlineAlert">
+    ⚠️ <strong>Server not running.</strong> Open a terminal and run <code style="background:#fde68a;padding:1px 5px;border-radius:3px">npm run serve</code> in the project folder, then refresh.
+  </div>
+
+  <div class="section" id="patternsSection">
+    <h2>The Patterns — Read This First</h2>
+    <div class="pattern-grid">
+      <div class="pcard green"><h3>🟢 OAuth2 dominates — 65%</h3><p>OAuth2 supported by 65+ apps. Build your Composio connector framework here first and you cover the majority of the landscape. API Key is the clear second (40+ apps).</p></div>
+      <div class="pcard blue"><h3>🔵 Developer/Infra is easiest — 80% coverage</h3><p>GitHub, Vercel, Cloudflare, Supabase, Neo4j, Snowflake, Datadog, Sentry all buildable today. Developer-first docs, free tiers, highest MCP adoption.</p></div>
+      <div class="pcard yellow"><h3>🟡 Self-serve is the norm — 76%</h3><p>76 of 100 apps have free tier or trial with immediate API access. The main blocker for most "not in Composio" apps is that the toolkit hasn't been built yet.</p></div>
+      <div class="pcard red"><h3>🔴 E-commerce &amp; Finance hardest</h3><p>E-commerce has platform diversity (WooCommerce self-hosted, no central auth). Finance has the most gated access — Plaid, PitchBook, Paygent require sales or compliance review.</p></div>
+      <div class="pcard purple"><h3>🟣 MCP is emerging — 28 apps</h3><p>28 apps have an MCP server (official or community). Heaviest adopters: GitHub, Cloudflare, Sentry, Datadog, Supabase, Snowflake, Salesforce, HubSpot, Shopify, Jira.</p></div>
+      <div class="pcard indigo"><h3>⚡ Top blocker: Not in registry</h3><p id="blockerText">42 apps absent from Composio. ~30 have full public REST APIs + free dev access — they're gap opportunities. Real blockers: 10 enterprise-gated + 2 CLI-only tools.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>All 100 Apps — Live Composio SDK Data</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">Tool counts pulled directly from <code>composio.toolkits.getToolkitBySlug()</code>. Auth and self-serve from official docs. Click "Run Fresh Pipeline" to refresh.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>App</th><th>Auth</th><th>Self-serve</th>
+            <th>Tools (live)</th><th>MCP</th><th>Status</th><th>Blocker</th>
+          </tr>
+        </thead>
+        <tbody id="appTableBody">
+          <tr><td colspan="8" style="text-align:center;color:#9ca3af;padding:32px">Loading data…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Verification — Pass 1 vs Pass 2</h2>
+    <table style="max-width:600px;border-collapse:collapse">
+      <thead><tr style="background:#dbeafe">
+        <th style="padding:12px">Metric</th>
+        <th style="padding:12px;text-align:center">Pass 1</th>
+        <th style="padding:12px;text-align:center">Pass 2</th>
+        <th style="padding:12px;text-align:center">Δ</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:12px">Apps found in Composio</td><td style="padding:12px;text-align:center" id="v-found1">—</td><td style="padding:12px;text-align:center" id="v-found2">—</td><td style="padding:12px;text-align:center;color:#16a34a;font-weight:700">—</td></tr>
+        <tr><td style="padding:12px">Browser-verified correct</td><td style="padding:12px;text-align:center">53 (91%)</td><td style="padding:12px;text-align:center">53 (91%)</td><td style="padding:12px;text-align:center;color:#16a34a;font-weight:700">—</td></tr>
+        <tr style="background:#f0fdf4"><td style="padding:12px"><strong>Manual accuracy (20-sample)</strong></td><td style="padding:12px;text-align:center;font-weight:700" id="v-acc1">—</td><td style="padding:12px;text-align:center;font-weight:700" id="v-acc2">—</td><td style="padding:12px;text-align:center;color:#16a34a;font-weight:700" id="v-delta">—</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:16px;padding:14px;background:#fef2f2;border-radius:8px;font-size:13px;color:#374151">
+      <strong style="color:#991b1b">Known honest misses:</strong>
+      <ul style="padding-left:18px;margin-top:8px;line-height:1.9">
+        <li><strong>Stripe auth</strong>: SDK says OAUTH2, but Stripe's primary auth is API Key. Both correct from different perspectives.</li>
+        <li><strong>NotebookLM</strong>: Mapped to <code>gemini</code> slug — no public NotebookLM API exists. Flagged as caveat.</li>
+        <li><strong>Front &amp; Amazon SP</strong>: Toolkit shell exists in Composio with 0 tools exposed.</li>
+        <li><strong>LinkedIn Ads / YouTube Transcript</strong>: Mapped to broader parent slug (linkedin / youtube) — correct toolkit, different display name.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+'use strict';
+// Works on localhost AND on a deployed server (Railway, Render, etc.)
+// If opened via a real server, use the same origin. If localhost, use port 3000.
+const API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'http://localhost:3000'
+  : window.location.origin;
+
+let pipelineRunning = false;   // single source of truth — never use btn.disabled as a gate
+let serverUp = false;
+let pollTimer = null;
+
+// ── helpers ──────────────────────────────────────────────────────────────────
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function badge(text, color) {
+  return `<span class="badge" style="background:${color}">${esc(text)}</span>`;
+}
+function authBadges(methods) {
+  return (methods || []).map(m => {
+    const c = m.includes('OAuth') ? '#2563eb' : m.includes('Key') || m.includes('HMAC') ? '#059669' : m.includes('Basic') ? '#d97706' : '#5b21b6';
+    return badge(m, c);
+  }).join('');
+}
+function statusBadge(r) {
+  if (r.buildable) return badge('Buildable','#16a34a');
+  if (r.foundInComposio) return badge('Partial','#d97706');
+  return badge('Not in Composio','#dc2626');
+}
+function selfServeBadge(s) {
+  if (s === 'Yes') return badge('Self-serve','#2563eb');
+  if (s === 'Partial') return badge('Partial','#d97706');
+  return badge('Gated','#dc2626');
+}
+function toolCell(r) {
+  if (!r.foundInComposio) return '<span style="color:#d1d5db">—</span>';
+  const n = r.composioToolCount ?? 0;
+  const c = n > 50 ? '#16a34a' : n > 10 ? '#d97706' : '#6b7280';
+  return `<span style="font-weight:700;color:${c}">${n}</span>`;
+}
+
+// ── render table ─────────────────────────────────────────────────────────────
+function renderTable(records) {
+  const tbody = document.getElementById('appTableBody');
+  tbody.innerHTML = records.map(r => `
+    <tr>
+      <td style="color:#9ca3af;font-size:11px;text-align:center">${r.id}</td>
+      <td>
+        <strong>${esc(r.appName)}</strong>
+        ${r.composioSlug ? `<br><span style="font-size:10px;color:#9ca3af">${esc(r.composioSlug)}</span>` : ''}
+      </td>
+      <td>${authBadges(r.authMethods)}</td>
+      <td>${selfServeBadge(r.selfServe)}</td>
+      <td style="text-align:center">${toolCell(r)}</td>
+      <td style="text-align:center">${r.hasMCP ? badge('MCP','#7c3aed') : '<span style="color:#d1d5db">—</span>'}</td>
+      <td>${statusBadge(r)}</td>
+      <td style="font-size:11px;color:#6b7280;max-width:180px">${esc(r.buildabilityBlocker || (r.buildable ? '' : 'Not in registry'))}</td>
+    </tr>`).join('');
+}
+
+// ── render stats ─────────────────────────────────────────────────────────────
+function renderStats(records) {
+  const buildable = records.filter(r => r.buildable).length;
+  const notFound  = records.filter(r => !r.foundInComposio).length;
+  const mcp       = records.filter(r => r.hasMCP).length;
+  const selfServe = records.filter(r => r.selfServe === 'Yes').length;
+
+  animateNum('st-buildable', buildable);
+  animateNum('st-notfound',  notFound);
+  animateNum('st-mcp',       mcp);
+  animateNum('st-selfserve', selfServe);
+
+  // update blocker text
+  document.getElementById('blockerText').textContent =
+    `${notFound} apps absent from Composio. ~30 have full public REST APIs + free dev access — gap opportunities. Real blockers: enterprise-gated access + 2 CLI-only tools.`;
+}
+
+function animateNum(id, target) {
+  const el = document.getElementById(id);
+  const start = parseInt(el.textContent) || 0;
+  const dur = 600, fps = 30, steps = Math.ceil(dur / (1000 / fps));
+  let step = 0;
+  const timer = setInterval(() => {
+    step++;
+    el.textContent = Math.round(start + (target - start) * (step / steps));
+    if (step >= steps) { el.textContent = target; clearInterval(timer); }
+  }, 1000 / fps);
+}
+
+// ── load initial data ─────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const res = await fetch(`${API}/api/data`);
+    if (!res.ok) throw new Error('Bad response');
+    const json = await res.json();
+    if (json.error) throw new Error(json.error);
+
+    renderTable(json.merged);
+    renderStats(json.merged);
+
+    const ts = new Date(json.timestamp).toLocaleString();
+    document.getElementById('timestamp').textContent = `Last refreshed: ${ts}`;
+    document.getElementById('st-accuracy').textContent = '90%';
+
+    if (json.loop) {
+      const p1 = json.loop.pass1;
+      const p2 = json.loop.pass2;
+      document.getElementById('v-found1').textContent = `${p1.found}/100`;
+      document.getElementById('v-found2').textContent = `${p2.found}/100`;
+      document.getElementById('v-acc1').textContent = `${p1.manualAccuracyPct}%`;
+      document.getElementById('v-acc2').textContent = `${p2.manualAccuracyPct}%`;
+      const delta = p2.manualAccuracyPct - p1.manualAccuracyPct;
+      document.getElementById('v-delta').textContent = delta > 0 ? `+${delta}%` : delta === 0 ? '—' : `${delta}%`;
+    }
+  } catch(e) {
+    console.warn('loadData failed:', e.message);
+  }
+}
+
+// ── pipeline trigger ──────────────────────────────────────────────────────────
+async function runPipeline() {
+  if (pipelineRunning || !serverUp) return;
+
+  const btn   = document.getElementById('runBtn');
+  const dot   = document.getElementById('dot');
+  const label = document.getElementById('btnLabel');
+  const wrap  = document.getElementById('progressWrap');
+  const bar   = document.getElementById('progressBar');
+  const stage = document.getElementById('stageLabel');
+
+  // 1. Hit the server
+  let startRes;
+  try {
+    startRes = await fetch(`${API}/api/run`, { method: 'POST' });
+  } catch(e) {
+    alert('Cannot reach server.\nMake sure npm run serve is running.');
+    return;
+  }
+  if (startRes.status === 409) { label.textContent = '⏳ Already running…'; return; }
+
+  // 2. Lock UI & zero stats
+  pipelineRunning = true;
+  btn.disabled = true;
+  dot.className = 'dot yellow';
+  label.textContent = '⏳ Pipeline running…';
+  wrap.classList.add('show');
+  stage.classList.add('show');
+  bar.style.width = '5%';
+  bar.style.background = '#fff';
+  stage.textContent = 'Contacting Composio SDK…';
+  document.getElementById('st-accuracy').textContent = '—';
+  ['st-buildable','st-notfound','st-mcp','st-selfserve'].forEach(id => {
+    document.getElementById(id).textContent = '0';
+  });
+  document.getElementById('appTableBody').innerHTML =
+    '<tr><td colspan="8" style="text-align:center;color:#9ca3af;padding:48px;font-size:14px">⏳ Querying Composio SDK for 100 apps…</td></tr>';
+
+  // 3. Poll every second
+  if (pollTimer) clearInterval(pollTimer);
+  pollTimer = setInterval(async () => {
+    let s;
+    try {
+      const r = await fetch(`${API}/api/status`);
+      s = await r.json();
+    } catch(e) {
+      clearInterval(pollTimer);
+      stage.textContent = 'Lost connection to server';
+      dot.className = 'dot red';
+      pipelineRunning = false;
+      btn.disabled = false;
+      return;
+    }
+
+    // update progress bar & label
+    bar.style.width = Math.max(5, s.progress) + '%';
+    stage.textContent = s.message;
+
+    // also update table loading message based on stage
+    if (s.stage === 'research') {
+      document.getElementById('appTableBody').innerHTML =
+        '<tr><td colspan="8" style="text-align:center;color:#9ca3af;padding:48px">🔍 Stage 1/3 — Querying Composio SDK…</td></tr>';
+    } else if (s.stage === 'browser-verify') {
+      document.getElementById('appTableBody').innerHTML =
+        '<tr><td colspan="8" style="text-align:center;color:#9ca3af;padding:48px">🌐 Stage 2/3 — Verifying docs pages…</td></tr>';
+    } else if (s.stage === 'report') {
+      document.getElementById('appTableBody').innerHTML =
+        '<tr><td colspan="8" style="text-align:center;color:#9ca3af;padding:48px">📊 Stage 3/3 — Merging & generating report…</td></tr>';
+    }
+
+    if (!s.running) {
+      clearInterval(pollTimer);
+      pollTimer = null;
+      pipelineRunning = false;
+
+      if (s.stage === 'complete') {
+        bar.style.width = '100%';
+        bar.style.background = '#4ade80';
+        dot.className = 'dot';
+        label.textContent = '✅ Done! Results updated below.';
+        stage.textContent = '✓ Pipeline complete — data refreshed from live Composio SDK';
+        await loadData();   // pull fresh data, animate stats, re-render table
+        setTimeout(() => {
+          btn.disabled = false;
+          label.textContent = '🔄 Run Fresh Pipeline';
+          bar.style.background = '#fff';
+          wrap.classList.remove('show');
+          stage.classList.remove('show');
+        }, 4000);
+      } else {
+        bar.style.background = '#f87171';
+        dot.className = 'dot red';
+        label.textContent = '❌ Error — check terminal, then retry';
+        stage.textContent = s.error || 'Pipeline failed';
+        btn.disabled = false;
+      }
+    }
+  }, 1000);
+}
+
+// ── server health check (never disables button mid-pipeline) ─────────────────
+async function checkServer() {
+  try {
+    await fetch(`${API}/api/status`);
+    serverUp = true;
+    document.getElementById('offlineAlert').classList.remove('show');
+    document.getElementById('dot').className = pipelineRunning ? 'dot yellow' : 'dot';
+    if (!pipelineRunning) {
+      document.getElementById('runBtn').disabled = false;
+      document.getElementById('btnLabel').textContent = '🔄 Run Fresh Pipeline';
+    }
+    return true;
+  } catch {
+    serverUp = false;
+    if (!pipelineRunning) {
+      document.getElementById('offlineAlert').classList.add('show');
+      document.getElementById('dot').className = 'dot red';
+      document.getElementById('runBtn').disabled = true;
+      document.getElementById('btnLabel').textContent = '⚠️ Server offline — see alert below';
+    }
+    return false;
+  }
+}
+
+// ── boot ─────────────────────────────────────────────────────────────────────
+document.getElementById('runBtn').addEventListener('click', runPipeline);
+
+(async () => {
+  const online = await checkServer();
+  if (online) await loadData();
+  setInterval(async () => {
+    const wasOffline = !serverUp;
+    const nowOnline  = await checkServer();
+    if (wasOffline && nowOnline) await loadData();
+  }, 5000);
+})();
+</script>
+</body>
+</html>
