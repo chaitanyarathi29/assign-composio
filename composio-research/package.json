@@ -1,0 +1,26 @@
+{
+  "name": "composio-app-research",
+  "version": "1.0.0",
+  "description": "Research pipeline: match 100 apps to Composio toolkits, extract auth/API metadata, analyze patterns, verify accuracy.",
+  "type": "module",
+  "scripts": {
+    "research": "tsx src/researchAgent.ts",
+    "analyze": "tsx src/analyze.ts",
+    "verify": "tsx src/verify.ts",
+    "report": "tsx src/generateReport.ts",
+    "report-interactive": "tsx src/generateReportInteractive.ts",
+    "browser-verify": "tsx src/browserVerify.ts",
+    "loop-compare": "tsx src/loopCompare.ts",
+    "auto-loop": "tsx src/autoVerifyLoop.ts",
+    "serve": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@composio/core": "latest",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
